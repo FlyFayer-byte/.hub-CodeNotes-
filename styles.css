@@ -1,0 +1,63 @@
+/* Основний контейнер для розтягування на всю висоту */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #0a3d6e, #00b894);
+    color: white;
+}
+
+/* Основний контейнер сторінки */
+main {
+    flex: 1; /* Це розширить вміст, щоб футер завжди був внизу */
+    padding: 20px;
+}
+
+/* Основні стилі */
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;           /* прибирає маркери зі списка */
+    display: flex;              /* розташовує елементи горизонтально в одному рядку */
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;      /* прибирає підчеркування тексту */
+    color: white;
+    font-size: 1.2em;
+    text-transform: uppercase;  /* робимо всі бекви заголовними */
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00f5d4; /* змінюємо колір при наведені на елемент меню */
+}
+
+footer {
+    text-align: center;
+    padding:  1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Неонова підсвітка для тексту */
+a, h1, h2, h3, p {
+    text-shadow: 0 0 5px #00f5d4, 0 0 10px #00f5d4, 0 0 15px #00f5d4;
+}

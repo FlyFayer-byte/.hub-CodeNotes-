@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Довідник HTML & CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="html.html">HTML</a></li>
+                <li><a href="css.html">CSS</a></li>
+                <li><a href="js.html">JavaScript</a></li>
+                <li><a href="db.html">Довідник</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Довідник HTML & CSS</h1>
+        <button onclick="addEntry()">Додати запис</button>
+        <table id="dbTable">
+            <thead>
+                <tr>
+                    <th>Тип</th>
+                    <th>Назва</th>
+                    <th>Опис</th>
+                    <th>Дії</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Дані будуть заповнюватись динамічно -->
+            </tbody>
+        </table>
+    </main>
+    
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", loadEntries);
+        
+        function loadEntries() {
+            fetch('https://yourserver.com/api/get-entries')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector("#dbTable tbody");
+                    tbody.innerHTML = "";
+                    data.forEach(entry => {
+                        const row = `<tr>
+                            <td>${entry.type}</td>
+                            <td>${entry.name}</td>
+                            <td>${entry.description}</td>
+                            <td>
+                                <button onclick="editEntry(${entry.id})">Редагувати</button>
+                                <button onclick="deleteEntry(${entry.id})">Видалити</button>
+                            </td>
+                        </tr>`;
+                        tbody.innerHTML += row;
+                    });
+                });
+        }
+        
+        function addEntry() {
+            const type = prompt("Введіть тип (HTML/CSS)");
+            const name = prompt("Введіть назву");
+            const description = prompt("Введіть опис");
+            
+            fetch('https://yourserver.com/api/add-entry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ type, name, description })
+            }).then(() => loadEntries());
+        }
+        
+        function editEntry(id) {
+            const name = prompt("Введіть нову назву");
+            const description = prompt("Введіть новий опис");
+            
+            fetch(`https://yourserver.com/api/edit-entry/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, description })
+            }).then(() => loadEntries());
+        }
+        
+        function deleteEntry(id) {
+            fetch(`https://yourserver.com/api/delete-entry/${id}`, {
+                method: 'DELETE'
+            }).then(() => loadEntries());
+        }
+    </script>
+</body>
+</html>
