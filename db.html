@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Довідник HTML & CSS</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .modal, .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 212, 0.8);
+            z-index: 1000;
+            opacity: 0;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            width: 90%;
+            max-width: 400px;
+        }
+        .modal.show { transform: translate(-50%, -50%) scale(1); opacity: 1; display: block; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999; opacity: 0; transition: opacity 0.3s ease-in-out; }
+        .modal-overlay.show { opacity: 1; display: block; }
+    </style>
 </head>
 <body>
     <header>
@@ -21,12 +42,13 @@
 
     <main>
         <h1>Довідник HTML & CSS</h1>
-        <button onclick="addEntry()">Додати запис</button>
+        <input type="text" id="searchInput" placeholder="🔍 Пошук записів..." oninput="searchEntries()">
+        <button onclick="openModal()">➕ Додати запис</button>
         <table id="dbTable">
             <thead>
                 <tr>
-                    <th>Тип</th>
-                    <th>Назва</th>
+                    <th onclick="sortTable(0)">Тип 🔽</th>
+                    <th onclick="sortTable(1)">Назва 🔽</th>
                     <th>Опис</th>
                     <th>Дії</th>
                 </tr>
@@ -36,74 +58,115 @@
             </tbody>
         </table>
     </main>
-    
+
     <footer>
-        <p>&copy; 2025 .hub{CodeNotes}. Усі права захищенію</p>
+        <p>&copy; 2025 .hub{CodeNotes}. Усі права захищені.</p>
     </footer>
+
+    <!-- Модальне вікно -->
+    <div id="modal" class="modal">
+        <h2 id="modalTitle">Новий запис</h2>
+        <input type="hidden" id="entryId">
+        <label>Тип: 
+            <select id="entryType">
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+            </select>
+        </label>
+        <label>Назва: <input type="text" id="entryName"></label>
+        <label>Опис: <textarea id="entryDescription"></textarea></label>
+        <button onclick="saveEntry()">Зберегти</button>
+        <button onclick="closeModal()">Скасувати</button>
+    </div>
+    <div id="modalOverlay" class="modal-overlay" onclick="closeModal()"></div>
 
     <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", loadEntries);
-    
+
         function loadEntries() {
             fetch('http://localhost:5000/api/get-entries')
                 .then(response => response.json())
                 .then(data => {
-                    const tbody = document.querySelector("#dbTable tbody");
-                    tbody.innerHTML = "";
-                    data.forEach(entry => {
-                        const row = `<tr>
-                            <td>${entry.type}</td>
-                            <td>${entry.name}</td>
-                            <td>${entry.description}</td>
-                            <td>
-                                <button onclick="editEntry(${entry.id})">Редагувати</button>
-                                <button onclick="deleteEntry(${entry.id})">Видалити</button>
-                            </td>
-                        </tr>`;
-                        tbody.innerHTML += row;
-                    });
+                    renderTable(data);
                 })
                 .catch(error => console.error('Помилка завантаження даних:', error));
         }
-    
-        function addEntry() {
-            const type = prompt("Введіть тип (HTML/CSS)");
-            const name = prompt("Введіть назву");
-            const description = prompt("Введіть опис");
-    
-            fetch('http://localhost:5000/api/add-entry', {
-                method: 'POST',
+
+        function renderTable(data) {
+            const tbody = document.querySelector("#dbTable tbody");
+            tbody.innerHTML = "";
+            data.forEach(entry => {
+                const row = `<tr>
+                    <td>${entry.type}</td>
+                    <td>${entry.name}</td>
+                    <td>${entry.description}</td>
+                    <td>
+                        <button onclick="openModal(${entry.id}, '${entry.type}', '${entry.name}', '${entry.description}')">✏️</button>
+                        <button onclick="deleteEntry(${entry.id})">🗑</button>
+                    </td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function searchEntries() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const rows = document.querySelectorAll("#dbTable tbody tr");
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(query) ? "" : "none";
+            });
+        }
+
+        function sortTable(columnIndex) {
+            const table = document.getElementById("dbTable");
+            const rows = Array.from(table.rows).slice(1);
+            const sortedRows = rows.sort((a, b) => 
+                a.cells[columnIndex].innerText.localeCompare(b.cells[columnIndex].innerText)
+            );
+            document.querySelector("#dbTable tbody").append(...sortedRows);
+        }
+
+        function openModal(id = null, type = 'HTML', name = '', description = '') {
+            document.getElementById("modal").classList.add("show");
+            document.getElementById("modalOverlay").classList.add("show");
+            document.getElementById("entryId").value = id || '';
+            document.getElementById("entryType").value = type;
+            document.getElementById("entryName").value = name;
+            document.getElementById("entryDescription").value = description;
+            document.getElementById("modalTitle").innerText = id ? "Редагувати запис" : "Новий запис";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.remove("show");
+            document.getElementById("modalOverlay").classList.remove("show");
+        }
+
+        function saveEntry() {
+            const id = document.getElementById("entryId").value;
+            const type = document.getElementById("entryType").value;
+            const name = document.getElementById("entryName").value.trim();
+            const description = document.getElementById("entryDescription").value.trim();
+
+            if (!name || !description) {
+                alert("Усі поля повинні бути заповнені!");
+                return;
+            }
+
+            const url = id ? `http://localhost:5000/api/edit-entry/${id}` : 'http://localhost:5000/api/add-entry';
+            const method = id ? 'PUT' : 'POST';
+
+            fetch(url, {
+                method: method,
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ type, name, description })
-            }).then(() => loadEntries());
+            }).then(() => {
+                closeModal();
+                loadEntries();
+            });
         }
-    
-        function editEntry(id) {
-            const name = prompt("Введіть нову назву");
-            const description = prompt("Введіть новий опис");
-    
-            fetch(`http://localhost:5000/api/edit-entry/${id}`, {  // 🔹 Виправлено URL
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, description })
-            }).then(() => loadEntries());
-        }
-    
-        function deleteEntry(id) {
-            fetch(`http://localhost:5000/api/delete-entry/${id}`, {  // 🔹 Виправлено URL
-                method: 'DELETE'
-            }).then(() => loadEntries());
-        }
-    </script>   
-    
-    
-
-
-
-
-
-
-    
+    </script>
 </body>
 </html>
