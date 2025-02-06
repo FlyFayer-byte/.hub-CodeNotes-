@@ -25,7 +25,7 @@ function loadFromLocalStorage() {
 // Функція для синхронізації з сервером (через API)
 async function syncWithServer() {
     try {
-        const response = await fetch('https://yourserver.com/api/sync', {
+        const response = await fetch('http://localhost:5000/api/get-entries', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

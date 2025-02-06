@@ -37,6 +37,10 @@
         </table>
     </main>
     
+    <footer>
+        <p>&copy; 2025 .hub{CodeNoted}. Усі права захищенію</p>
+    </footer>
+
     <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", loadEntries);
@@ -67,7 +71,7 @@
             const name = prompt("Введіть назву");
             const description = prompt("Введіть опис");
             
-            fetch('https://yourserver.com/api/add-entry', {
+            fetch('http://localhost:5000/api/get-entries', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ type, name, description })
