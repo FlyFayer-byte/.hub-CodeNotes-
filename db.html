@@ -18,7 +18,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <h1>Довідник HTML & CSS</h1>
         <button onclick="addEntry()">Додати запис</button>
@@ -32,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Дані будуть заповнюватись динамічно -->
+                <!-- Дані будуть завантажуватись сюди -->
             </tbody>
         </table>
     </main>
@@ -41,61 +41,60 @@
         <p>&copy; 2025 .hub{CodeNotes}. Усі права захищенію</p>
     </footer>
 
-    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", loadEntries);
-
-function loadEntries() {
-    fetch('http://localhost:5000/api/get-entries')
-        .then(response => response.json())
-        .then(data => {
-            const tbody = document.querySelector("#dbTable tbody");
-            tbody.innerHTML = "";
-            data.forEach(entry => {
-                const row = `<tr>
-                    <td>${entry.type}</td>
-                    <td>${entry.name}</td>
-                    <td>${entry.description}</td>
-                    <td>
-                        <button onclick="editEntry(${entry.id})">Редагувати</button>
-                        <button onclick="deleteEntry(${entry.id})">Видалити</button>
-                    </td>
-                </tr>`;
-                tbody.innerHTML += row;
-            });
-        })
-        .catch(error => console.error('Помилка завантаження даних:', error));
-}
-
-function addEntry() {
-    const type = prompt("Введіть тип (HTML/CSS)");
-    const name = prompt("Введіть назву");
-    const description = prompt("Введіть опис");
     
-    fetch('http://localhost:5000/api/add-entry', { // Змінено URL
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type, name, description })
-    }).then(() => loadEntries());
-}
-
-        
+        function loadEntries() {
+            fetch('http://localhost:5000/api/get-entries')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector("#dbTable tbody");
+                    tbody.innerHTML = "";
+                    data.forEach(entry => {
+                        const row = `<tr>
+                            <td>${entry.type}</td>
+                            <td>${entry.name}</td>
+                            <td>${entry.description}</td>
+                            <td>
+                                <button onclick="editEntry(${entry.id})">Редагувати</button>
+                                <button onclick="deleteEntry(${entry.id})">Видалити</button>
+                            </td>
+                        </tr>`;
+                        tbody.innerHTML += row;
+                    });
+                })
+                .catch(error => console.error('Помилка завантаження даних:', error));
+        }
+    
+        function addEntry() {
+            const type = prompt("Введіть тип (HTML/CSS)");
+            const name = prompt("Введіть назву");
+            const description = prompt("Введіть опис");
+    
+            fetch('http://localhost:5000/api/add-entry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ type, name, description })
+            }).then(() => loadEntries());
+        }
+    
         function editEntry(id) {
             const name = prompt("Введіть нову назву");
             const description = prompt("Введіть новий опис");
-            
-            fetch(`https://yourserver.com/api/edit-entry/${id}`, {
+    
+            fetch(`http://localhost:5000/api/edit-entry/${id}`, {  // 🔹 Виправлено URL
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, description })
             }).then(() => loadEntries());
         }
-        
+    
         function deleteEntry(id) {
-            fetch(`https://yourserver.com/api/delete-entry/${id}`, {
+            fetch(`http://localhost:5000/api/delete-entry/${id}`, {  // 🔹 Виправлено URL
                 method: 'DELETE'
             }).then(() => loadEntries());
         }
     </script>
+    <script src="script.js"></script>    
 </body>
 </html>

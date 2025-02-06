@@ -1,36 +1,43 @@
-/* Основний контейнер для розтягування на всю висоту */
+:root {
+    --neon-green: #0ff;     /*(бірюзовий)*/
+    --neon-blue: #08f;      /*(синій)*/
+    --bg-dark: #001a1a;     /*(темний фон)*/
+}
+/* 🌌 Хакерський неоновий стиль */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Courier New', monospace;
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, #0a3d6e, #00b894);
-    color: white;
+    background: linear-gradient(45deg, var(--bg-dark), #002);
+    color: #fff;
 }
 
 /* Основний контейнер сторінки */
 main {
-    flex: 1; /* Це розширить вміст, щоб футер завжди був внизу */
+    flex: 1;
     padding: 20px;
     margin-top: 1rem;
 }
 
-/* Основні стилі */
+/* 🌐 Заголовок */
 header {
-    background-color: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.9);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 10;
+    box-shadow: 0 0 15px #00f5d4;
+    text-align: center;
 }
 
 nav ul {
-    list-style: none;           /* прибирає маркери зі списка */
-    display: flex;              /* розташовує елементи горизонтально в одному рядку */
+    list-style: none;
+    display: flex;
     justify-content: center;
     margin: 0;
     padding: 0;
@@ -41,24 +48,88 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;      /* прибирає підчеркування тексту */
-    color: white;
+    text-decoration: none;
+    color: #00f5d4;
     font-size: 1.2em;
-    text-transform: uppercase;  /* робимо всі бекви заголовними */
-    transition: color 0.3s;
+    text-transform: uppercase;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 nav ul li a:hover {
-    color: #00f5d4; /* змінюємо колір при наведені на елемент меню */
+    color: #57ebde;
+    text-shadow: 0 0 10px #57ebde;
 }
 
 footer {
     text-align: center;
-    padding:  1rem;
-    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 15px #00f5d4;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* 🔹 Оновлений стиль таблиці */
+#dbTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00f5d4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 245, 212, 0.5);
 }
 
-/* Неонова підсвітка для тексту */
-a, h1, h2, h3, p {
-    text-shadow: 0 0 5px #00f5d4, 0 0 10px #00f5d4, 0 0 15px #00f5d4;
+#dbTable th, #dbTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#dbTable th {
+    background: rgba(0, 255, 212, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#dbTable tr:hover {
+    background: rgba(0, 255, 212, 0.2);
+    box-shadow: inset 0 0 8px #00f5d4;
+}
+
+/* 🔥 Неонові кнопки */
+.btn-edit, .btn-delete {
+    padding: 8px 14px;
+    margin: 2px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn-edit {
+    background: #00b894;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 245, 212, 0.7);
+}
+
+.btn-edit:hover {
+    background: #00806e;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 245, 212, 1);
+}
+
+.btn-delete {
+    background: #d63031;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 50, 50, 0.7);
+}
+
+.btn-delete:hover {
+    background: #a91e23;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 50, 50, 1);
 }
