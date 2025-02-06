@@ -38,45 +38,47 @@
     </main>
     
     <footer>
-        <p>&copy; 2025 .hub{CodeNoted}. Усі права захищенію</p>
+        <p>&copy; 2025 .hub{CodeNotes}. Усі права захищенію</p>
     </footer>
 
     <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", loadEntries);
-        
-        function loadEntries() {
-            fetch('https://yourserver.com/api/get-entries')
-                .then(response => response.json())
-                .then(data => {
-                    const tbody = document.querySelector("#dbTable tbody");
-                    tbody.innerHTML = "";
-                    data.forEach(entry => {
-                        const row = `<tr>
-                            <td>${entry.type}</td>
-                            <td>${entry.name}</td>
-                            <td>${entry.description}</td>
-                            <td>
-                                <button onclick="editEntry(${entry.id})">Редагувати</button>
-                                <button onclick="deleteEntry(${entry.id})">Видалити</button>
-                            </td>
-                        </tr>`;
-                        tbody.innerHTML += row;
-                    });
-                });
-        }
-        
-        function addEntry() {
-            const type = prompt("Введіть тип (HTML/CSS)");
-            const name = prompt("Введіть назву");
-            const description = prompt("Введіть опис");
-            
-            fetch('http://localhost:5000/api/get-entries', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ type, name, description })
-            }).then(() => loadEntries());
-        }
+
+function loadEntries() {
+    fetch('http://localhost:5000/api/get-entries')
+        .then(response => response.json())
+        .then(data => {
+            const tbody = document.querySelector("#dbTable tbody");
+            tbody.innerHTML = "";
+            data.forEach(entry => {
+                const row = `<tr>
+                    <td>${entry.type}</td>
+                    <td>${entry.name}</td>
+                    <td>${entry.description}</td>
+                    <td>
+                        <button onclick="editEntry(${entry.id})">Редагувати</button>
+                        <button onclick="deleteEntry(${entry.id})">Видалити</button>
+                    </td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        })
+        .catch(error => console.error('Помилка завантаження даних:', error));
+}
+
+function addEntry() {
+    const type = prompt("Введіть тип (HTML/CSS)");
+    const name = prompt("Введіть назву");
+    const description = prompt("Введіть опис");
+    
+    fetch('http://localhost:5000/api/add-entry', { // Змінено URL
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, name, description })
+    }).then(() => loadEntries());
+}
+
         
         function editEntry(id) {
             const name = prompt("Введіть нову назву");
