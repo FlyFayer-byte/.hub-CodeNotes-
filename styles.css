@@ -17,11 +17,34 @@ body {
     color: #fff;
 }
 
+/* Стиль для логотипа */
+#logo {
+    display:list-item;    
+    justify-self: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #00FFD1; /* Неоново-синій колір */
+    background: linear-gradient(45deg, #00FFD1, #00BFFF); /* Градієнт */
+    -webkit-background-clip: text; /* Текст з градієнтом */
+    color: transparent; /* Текст прозорий */
+    letter-spacing: 2px;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 212, 0.8), 0 0 20px rgba(0, 255, 212, 0.5); /* Тінь для ефекту */
+    transition: transform 0.3s ease-in-out;
+}
+
+#logo:hover {
+    transform: scale(1.1); /* Логотип збільшується при наведенні */
+}
+
 /* 📌 Основний контейнер сторінки */
 main {
     flex: 1; /* Заповнює весь доступний простір */
     padding: 20px;
-    margin-top: 1rem;
+    margin-top: 5rem;
 }
 
 /* 🌐 Шапка сайту */

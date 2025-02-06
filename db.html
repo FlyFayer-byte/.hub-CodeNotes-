@@ -6,44 +6,52 @@
     <title>Довідник HTML & CSS</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .modal, .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 255, 212, 0.8);
-            z-index: 1000;
-            opacity: 0;
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            width: 90%;
-            max-width: 400px;
-        }
-        .modal.show { 
-            transform: translate(-50%, -50%) scale(1); 
-            opacity: 1; display: block; 
-        }
-        .modal-overlay { 
-            position: fixed; 
-            top: 0; left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: rgba(0, 0, 0, 0.5); 
-            z-index: 999; 
-            opacity: 0; 
-            transition: opacity 0.3s ease-in-out; 
-        }
-        .modal-overlay.show { 
-            opacity: 1; 
-            display: block; 
-        }
+/* Модальне вікно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 212, 0.8);
+    z-index: 1000;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    display: block;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    display: block;
+}
     </style>
 </head>
 <body>
     <header>
+        <div id="logo">.hub{CodeNotes}</div>
         <nav>
             <ul>
                 <li><a href="index.html">Головна</a></li>
