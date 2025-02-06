@@ -1,28 +1,30 @@
+/* 🌌 Глобальні змінні для темного неонового стилю */
 :root {
-    --neon-green: #0ff;     /*(бірюзовий)*/
-    --neon-blue: #08f;      /*(синій)*/
-    --bg-dark: #001a1a;     /*(темний фон)*/
+    --neon-green: #0ff;  /* Бірюзовий неоновий колір */
+    --neon-blue: #08f;   /* Синій неоновий колір */
+    --bg-dark: #001a1a;  /* Темний фон */
 }
-/* 🌌 Хакерський неоновий стиль */
+
+/* 🌍 Основні налаштування для сторінки */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', monospace; /* Класичний моноширинний шрифт */
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, var(--bg-dark), #002);
+    background: linear-gradient(45deg, var(--bg-dark), #002); /* Градієнтний фон */
     color: #fff;
 }
 
-/* Основний контейнер сторінки */
+/* 📌 Основний контейнер сторінки */
 main {
-    flex: 1;
+    flex: 1; /* Заповнює весь доступний простір */
     padding: 20px;
     margin-top: 1rem;
 }
 
-/* 🌐 Заголовок */
+/* 🌐 Шапка сайту */
 header {
     background: rgba(0, 0, 0, 0.9);
     padding: 1rem 0;
@@ -31,10 +33,11 @@ header {
     top: 0;
     left: 0;
     z-index: 10;
-    box-shadow: 0 0 15px #00f5d4;
+    box-shadow: 0 0 15px var(--neon-green);
     text-align: center;
 }
 
+/* 📜 Навігація */
 nav ul {
     list-style: none;
     display: flex;
@@ -42,41 +45,42 @@ nav ul {
     margin: 0;
     padding: 0;
 }
-
 nav ul li {
     margin: 0 20px;
 }
-
 nav ul li a {
     text-decoration: none;
-    color: #00f5d4;
+    color: var(--neon-green);
     font-size: 1.2em;
     text-transform: uppercase;
     transition: color 0.3s, text-shadow 0.3s;
 }
-
 nav ul li a:hover {
     color: #57ebde;
     text-shadow: 0 0 10px #57ebde;
 }
 
+/* 📌 Футер */
 footer {
     text-align: center;
     padding: 1rem;
     background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 15px #00f5d4;
+    box-shadow: 0 0 15px var(--neon-green);
 }
+
+/* ✨ Анімація плавного завантаження */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-/* 🔹 Оновлений стиль таблиці */
+
+/* 🏛️ Стилізація таблиці бази даних */
 #dbTable {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     background: rgba(0, 0, 0, 0.8);
-    color: #00f5d4;
+    color: var(--neon-green);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 245, 212, 0.5);
@@ -96,7 +100,7 @@ footer {
 
 #dbTable tr:hover {
     background: rgba(0, 255, 212, 0.2);
-    box-shadow: inset 0 0 8px #00f5d4;
+    box-shadow: inset 0 0 8px var(--neon-green);
 }
 
 /* 🔥 Неонові кнопки */
