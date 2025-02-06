@@ -32,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Дані будуть завантажуватись сюди -->
+                <!-- Дані будуть вставлятися тут -->
             </tbody>
         </table>
     </main>
@@ -41,6 +41,7 @@
         <p>&copy; 2025 .hub{CodeNotes}. Усі права захищенію</p>
     </footer>
 
+    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", loadEntries);
     
@@ -94,7 +95,6 @@
                 method: 'DELETE'
             }).then(() => loadEntries());
         }
-    </script>
-    <script src="script.js"></script>    
+    </script>    
 </body>
 </html>
