@@ -74,12 +74,13 @@ nav ul {
     padding: 0;
 }
 nav ul li {
-    margin: 0 20px;
+    margin: 0 5px;
     box-shadow: 0 0 10px rgba(0, 255, 212, 0.8), 0 0 20px rgba(0, 255, 212, 0.5); /* Тінь для ефекту */
     transition: transform 0.3s ease-in-out;
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
+    font-weight: 600;
 }
 
 nav ul li:hover {
@@ -97,6 +98,8 @@ nav ul li a:hover {
     color: #57ebde;
     text-shadow: 0 0 10px #57ebde;
 }
+
+/* 📜 Навігація з випадаючими списка */
 
 /* 📌 Футер */
 footer {

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.hub{CodeNotes} - Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/theme/monokai.min.css">
+    <style>
+        .body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .editor-container {
+            display: flex;
+            flex: 2;
+            min-height: 60vh;
+        }
+        .editor-pane {
+            flex: 1;
+            position: relative;
+            border-right: 2px solid #333;
+        }
+        .CodeMirror {
+            height: 100% !important;
+            font-size: 14px;
+        }
+        #preview {
+            flex: 1;
+            border: none;
+            background: #f0f0f0;
+        }
+        .pane-label {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: #fff;
+            z-index: 100;
+            font-size: 12px;
+            text-shadow: 1px 1px 2px #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">.hub{CodeNotes}</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="html.html">HTML</a></li>
+                <li><a href="css.html">CSS</a></li>
+                <li><a href="js.html">JavaScript</a></li>
+                <li><a href="db.html">Довідник</a></li>
+                <li><a href="code_editor.html">Code Editor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Code Editor</h1>
+        <div class="body">
+            <div class="editor-container">
+                <div class="editor-pane">
+                    <div class="pane-label">HTML</div>
+                    <!-- Стартовий HTML -->
+                    <textarea id="html"><!-- Стартовий HTML -->
+        <div class="container">
+            <h1>Welcome to Code Editor! 👋</h1>
+            <div class="box">Click me!</div>
+            <p>Edit code and see live preview!</p>
+        </div></textarea>
+                </div>
+                <!-- Стартовий CSS -->
+                <div class="editor-pane">
+                    <div class="pane-label">CSS</div>
+                    <textarea id="css">/* Стартовий CSS */
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background: #ff4757;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }</textarea>
+                </div>
+                <!-- Стартовий JavaScript -->
+                <div class="editor-pane">
+                    <div class="pane-label">JS</div>
+                    <textarea id="js">// Стартовий JavaScript
+        console.log('Hello from Code Editor!');
+        
+        document.querySelector('.box').addEventListener('click', function() {
+            this.style.transform = 'rotate(15deg) scale(1.1)';
+            this.style.background = '#2ed573';
+            
+            setTimeout(() => {
+                this.style.transform = 'none';
+                this.style.background = '#ff4757';
+            }, 500);
+        });</textarea>
+                </div>
+            </div>
+            <iframe id="preview"></iframe>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/xml/xml.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/css/css.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+        
+            <script>
+                // Ініціалізація редакторів
+                const editors = {
+                    html: CodeMirror.fromTextArea(document.getElementById('html'), {
+                        mode: 'text/html',
+                        theme: 'monokai',
+                        lineNumbers: true,
+                        autoCloseTags: true
+                    }),
+                    css: CodeMirror.fromTextArea(document.getElementById('css'), {
+                        mode: 'css',
+                        theme: 'monokai',
+                        lineNumbers: true
+                    }),
+                    js: CodeMirror.fromTextArea(document.getElementById('js'), {
+                        mode: 'javascript',
+                        theme: 'monokai',
+                        lineNumbers: true
+                    })
+                };
+        
+                // Оновлення прев'ю
+                function updatePreview() {
+                    const content = `
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <style>${editors.css.getValue()}</style>
+                        </head>
+                        <body>
+                            ${editors.html.getValue()}
+                            <script>${editors.js.getValue()}<\/script>
+                        </body>
+                        </html>
+                    `;
+                    
+                    const preview = document.getElementById('preview');
+                    preview.contentDocument.open();
+                    preview.contentDocument.write(content);
+                    preview.contentDocument.close();
+                }
+        
+                // Автоматичне оновлення при змінах
+                Object.values(editors).forEach(editor => 
+                    editor.on('change', updatePreview)
+                );
+        
+                // Ініціалізація при завантаженні
+                window.addEventListener('load', updatePreview);
+            </script>
+            </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 .hub{CodeNotes}. Усі права захищені.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
