@@ -64,7 +64,7 @@
     </header>
 
     <main>
-        <h1>Довідник HTML & CSS</h1>
+        <h1>Довідник HTML CSS & JavaScript</h1>
         <input type="text" id="searchInput" placeholder="🔍 Пошук записів..." oninput="searchEntries()">
         <button onclick="openModal()">➕ Додати запис</button>
         <table id="dbTable">
@@ -73,7 +73,7 @@
                     <th onclick="sortTable(0)">Тип 🔽</th>
                     <th onclick="sortTable(1)">Назва 🔽</th>
                     <th>Опис</th>
-                    <th>Дії</th>
+                    <th id="last">Дії</th>
                 </tr>
             </thead>
             <tbody>
