@@ -42,9 +42,117 @@ body {
 
 /* 📌 Основний контейнер сторінки */
 main {
+    margin-left: 290px;
+    margin-right: 290px;
     flex: 1; /* Заповнює весь доступний простір */
     padding: 20px;
     margin-top: 5rem;
+}
+
+/* Стилі для лівого бокового меню (sidebar) */
+.left-sidebar {
+    position: fixed;
+    top: 120px;  /* Відступ від верхнього краю з урахуванням header */
+    left: 0;
+    width: 250px;
+    height: calc(100% - 120px);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 255, 212, 0.5);
+    overflow-y: auto;
+    z-index: 9;
+}
+
+.left-sidebar nav ul {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-sidebar nav ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.left-sidebar nav ul li a {
+    color: var(--neon-green);
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.left-sidebar nav ul li a:hover {
+    color: #57ebde;
+}
+
+.left-sidebar .dropdown-content {
+    display: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+.left-sidebar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.left-sidebar .dropdown .dropbtn {
+    cursor: pointer;
+}
+
+/* Стилі для лівого бокового меню (sidebar) */
+.right-sidebar {
+    position: fixed;
+    top: 120px;  /* Відступ від верхнього краю з урахуванням header */
+    right: 0;
+    width: 250px;
+    height: calc(100% - 120px);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 255, 212, 0.5);
+    overflow-y: auto;
+    z-index: 9;
+}
+
+.right-sidebar nav ul {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.right-sidebar nav ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.right-sidebar nav ul li a {
+    color: var(--neon-green);
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.right-sidebar nav ul li a:hover {
+    color: #57ebde;
+}
+
+.right-sidebar .dropdown-content {
+    display: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+.right-sidebar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.right-sidebar .dropdown .dropbtn {
+    cursor: pointer;
 }
 
 /* 🌐 Шапка сайту */
@@ -103,6 +211,15 @@ nav ul li a:hover {
 
 /* 📌 Футер */
 footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.footer-html {
+    margin-left: 290px;
+    margin-right: 290px;
     text-align: center;
     padding: 1rem;
     background: rgba(0, 0, 0, 0.9);
