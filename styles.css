@@ -19,7 +19,7 @@ body {
 
 /* Стиль для логотипа */
 #logo {
-    display:list-item;    
+    display:inline-block;    
     justify-self: center;
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
