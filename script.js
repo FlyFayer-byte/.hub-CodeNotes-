@@ -17,62 +17,62 @@ async function loadEntries() {
         const response = await fetch('http://localhost:5000/api/get-entries');
         const data = await response.json();
 
-        const table = document.querySelector("#dbTable");
+        console.log("✅ Оновлені дані:", data);
+
         const tbody = document.querySelector("#dbTable tbody");
+        tbody.innerHTML = "";
+        
+        data.forEach(entry => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td contenteditable="true" onBlur="updateEntry(${entry.id}, this, 'type')">${entry.type}</td>
+                <td contenteditable="true" onBlur="updateEntry(${entry.id}, this, 'name')">${entry.name}</td>
+                <td contenteditable="true" onBlur="updateEntry(${entry.id}, this, 'description')">${entry.description}</td>
+                <td contenteditable="true" onBlur="updateEntry(${entry.id}, this, 'category')">${entry.category}</td>
+                <td contenteditable="true" onBlur="updateEntry(${entry.id}, this, 'example_code')"><pre>${entry.example_code}</pre></td>
+                <td>
+                    <button onclick="editEntry(${entry.id})">✏️</button>
+                    <button onclick="deleteEntry(${entry.id})">🗑️</button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
 
-        if (!table || !tbody) {
-            console.error("❌ Помилка: Таблиця не знайдена в DOM! Переконайтеся, що `db.html` містить <table id='dbTable'>.");
-            return;
-        }
-
-        // Перевіряємо, чи база змінилася
-        if (JSON.stringify(data) !== JSON.stringify(lastDatabaseState)) {
-            lastDatabaseState = data; // Оновлюємо стан бази
-            tbody.innerHTML = ""; // Очищаємо перед оновленням
-
-            data.forEach(entry => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-                    <td contenteditable="true" onBlur="updateEntry(${entry.id}, this, 'type')">${entry.type}</td>
-                    <td contenteditable="true" onBlur="updateEntry(${entry.id}, this, 'name')">${entry.name}</td>
-                    <td contenteditable="true" onBlur="updateEntry(${entry.id}, this, 'description')">${entry.description}</td>
-                    <td>
-                        <button class="btn-edit" onclick="editEntry(${entry.id})">✏️</button>
-                        <button class="btn-delete" onclick="deleteEntry(${entry.id})">🗑️</button>
-                    </td>
-                `;
-                tbody.appendChild(row);
-            });
-
-            saveToLocalStorage(data); // Оновлюємо LocalStorage
-            console.log("✅ Дані оновлено в таблиці.");
-        } else {
-            console.log("🔹 Дані не змінилися, оновлення не потрібне.");
-        }
+        console.log("✅ Таблиця оновлена.");
     } catch (error) {
         console.error('❌ Помилка завантаження даних:', error);
-        lastDatabaseState = loadFromLocalStorage(); // Використовуємо LocalStorage при помилці сервера
     }
 }
+
+
+
 
 // ⚡ Оновлення запису після редагування комірки
 function updateEntry(id, element, field) {
     const newValue = element.innerText.trim();
-    
+
     fetch(`http://localhost:5000/api/edit-entry/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ [field]: newValue })
-    }).then(() => console.log(`✅ Поле ${field} оновлено для ID ${id}`));
+    }).then(() => {
+        console.log(`✅ Поле ${field} оновлено для ID ${id}`);
+        loadEntries(); // Оновлення таблиці після редагування
+    });
 }
+
 
 // ⚡ Додавання нового запису
 function addEntry() {
-    const type = prompt("Введіть тип (HTML/CSS/JavaScript)");
-    const name = prompt("Введіть назву");
-    const description = prompt("Введіть опис");
+    const type = document.getElementById("entryType").value;
+    const name = document.getElementById("entryName").value.trim();
+    const description = document.getElementById("entryDescription").value.trim();
+    const category = document.getElementById("entryCategory").value.trim();
+    const example_code = document.getElementById("entryExample").value.trim();
 
-    if (!type || !name || !description) {
+    console.log("📝 Відправляємо дані:", { type, name, description, category, example_code });
+
+    if (!type || !name || !description || !category || !example_code) {
         alert("❌ Всі поля мають бути заповнені!");
         return;
     }
@@ -80,9 +80,13 @@ function addEntry() {
     fetch('http://localhost:5000/api/add-entry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type, name, description })
-    }).then(() => loadEntries()); // ✅ Оновлення тільки після змін
+        body: JSON.stringify({ type, name, description, category, example_code })
+    }).then(() => 
+        loadEntries()); // ✅ Оновлення тільки після змін
 }
+
+
+
 
 // ⚡ Видалення запису з підтвердженням
 function deleteEntry(id) {
@@ -103,4 +107,15 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.log("ℹ️ Таблиці немає на цій сторінці, loadEntries() не виконується.");
     }
+});
+
+// (Додає автопідказки під час введення пошуку)
+
+document.getElementById("searchInput").addEventListener("input", async function() {
+    const query = this.value;
+    if (query.length < 2) return;
+    
+    const response = await fetch(`/api/search?q=${query}`);
+    const suggestions = await response.json();
+    console.log("🔍 Автопідказки:", suggestions);
 });
