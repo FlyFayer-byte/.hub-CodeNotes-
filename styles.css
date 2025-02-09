@@ -49,7 +49,7 @@ main {
     margin-top: 5rem;
 }
 
-/* Стилі для лівого бокового меню (sidebar) */
+/* Стилі для лівого та правого бокового меню (sidebar) */
 .left-sidebar {
     position: fixed;
     top: 120px;  /* Відступ від верхнього краю з урахуванням header */
@@ -192,7 +192,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-    transform: scale(1.1); /* Логотип збільшується при наведенні */
+    transform: scale(1.0.5); /* Логотип збільшується при наведенні */
 }
 
 nav ul li a {
@@ -298,4 +298,25 @@ footer {
     background: #a91e23;
     transform: scale(1.1);
     box-shadow: 0 0 15px rgba(255, 50, 50, 1);
+}
+
+/* медіа-запити для кращої роботи на мобільних пристроях */
+@media (max-width: 768px) {
+    main {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .sidebar {
+        display: none; /* або зробіть меню відкриваним через кнопку */
+    }
+    header, footer {
+        text-align: center;
+        padding: 0.5rem;
+    }
+}
+
+/* стилі для елементів у стані фокусу */
+a:focus, button:focus {
+    outline: 2px dashed var(--neon-green);
+    outline-offset: 2px;
 }
