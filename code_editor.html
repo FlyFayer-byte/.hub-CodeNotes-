@@ -68,48 +68,41 @@
                     <div class="pane-label">HTML</div>
                     <!-- Стартовий HTML -->
                     <textarea id="html"><!-- Стартовий HTML -->
-        <div class="container">
-            <h1>Welcome to Code Editor! 👋</h1>
-            <div class="box">Click me!</div>
-            <p>Edit code and see live preview!</p>
-        </div></textarea>
+        <!DOCTYPE html>
+<html>
+  <head>
+    <title>Моя перша веб-сторінка</title>
+    <!--Наступна строчка підключає зовнішні стилі CSS
+    <link rel="stylesheet" href="styles.css">-->
+    <!--Наступна строчка підключає зовнішні JavaScript
+    <script src="script.js"></script>-->
+  </head>
+  <body>
+    <h1>Привіт, світ!</h1>
+    <p>Це мій перший HTML-документ.</p>
+  </body>
+</html></textarea>
                 </div>
                 <!-- Стартовий CSS -->
                 <div class="editor-pane">
                     <div class="pane-label">CSS</div>
                     <textarea id="css">/* Стартовий CSS */
-        .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .box {
-            width: 200px;
-            height: 200px;
-            background: #ff4757;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }</textarea>
+body {
+  background-color: beige;
+}
+h1 {
+  color: blue;
+}
+p {
+  font-size: 18px;
+}</textarea>
                 </div>
                 <!-- Стартовий JavaScript -->
                 <div class="editor-pane">
                     <div class="pane-label">JS</div>
                     <textarea id="js">// Стартовий JavaScript
-        console.log('Hello from Code Editor!');
-        
-        document.querySelector('.box').addEventListener('click', function() {
-            this.style.transform = 'rotate(15deg) scale(1.1)';
-            this.style.background = '#2ed573';
-            
-            setTimeout(() => {
-                this.style.transform = 'none';
-                this.style.background = '#ff4757';
-            }, 500);
-        });</textarea>
+//let user_name = prompt("Як тебе звати?");   // Запитає ім’я користувача  
+//alert("Привіт, " + user_name);              // Виведе сповіщення  </textarea>
                 </div>
             </div>
             <iframe id="preview"></iframe>

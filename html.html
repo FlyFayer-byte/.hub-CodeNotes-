@@ -25,13 +25,13 @@
     <aside class="left-sidebar">
         <nav>
             <ul>
-                <li><a href="#intro">Вступ</a></li>
+                <li><a href="#html_basics">Основи HTML</a></li>
                 <li class="dropdown">
-                  <a href="#basic-tags" class="dropbtn">Основні теги</a>
+                  <a href="#basic-tags" class="dropbtn"></a>
                   <ul class="dropdown-content">
-                    <li><a href="#headings">Заголовки</a></li>
-                    <li><a href="#paragraphs">Абзаци</a></li>
-                    <li><a href="#links">Посилання</a></li>
+                    <li><a href="#headings"></a></li>
+                    <li><a href="#paragraphs"></a></li>
+                    <li><a href="#links"></a></li>
                   </ul>
                 </li>
                 <!-- інші пункти -->
@@ -51,7 +51,81 @@
     </aside>
     
     <main class="main-sidebar">
+      <h1>Цей навчальний матеріал створений спільно з <a href="https://chatgpt.com">ChatGPT-4o</a>.</h1>
+      <h2 id="html_basics">Основи HTML</h2>
+      <!--Урок 1: Основи HTML-->
+      <section>
+        <h3>Що таке HTML?</h3>
+        <p><b>HTML (HyperText Markup Language)</b> – це мова розмітки гіпертексту, яка використовується для створення веб-сторінок. Вона визначає структуру сторінки за допомогою спеціальних тегів.</p>
+        <h3>Основні теги HTML</h3>
+        <p>HTML складається з <b>тегів</b>, які розміщуються в кутових дужках &lt; &gt;. Наприклад:</p>
+        <pre><code>&lt;p&gt;Це параграф&lt;/p&gt;</code></pre>
+        <p>Більшість тегів мають відкриваючий <code>&lt;p&gt;</code> і закриваючий <code>&lt;/p&gt;</code>.</p>
+        <p>Ось мінімальна структура HTML-документа:</p>
+        <pre><code>&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>Моя перша веб-сторінка&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;h1>Привіт, світ!&lt;/h1>
+    &lt;p>Це мій перший HTML-документ.&lt;/p>
+  &lt;/body>
+&lt;/html></code></pre>
+        <h3>Опис основних тегів:</h3>
+        <ul>
+          <li>
+            <code>&lt;html&gt;</code> – огортає весь HTML-код.
+          </li>
+          <li>
+            <code>&lt;head&gt;</code> – містить метаінформацію (назву сторінки, стилі тощо).
+          </li>
+          <li>
+            <code>&lt;title&gt;</code> – задає заголовок сторінки у вкладці браузера.
+          </li>
+          <li>
+            <code>&lt;body&gt;</code> – містить весь контент, який бачить користувач.
+          </li>
+          <li>
+            <code>&lt;h1&gt; ... &lt;h6&gt;</code> – використовуються для заголовків на сторінці від найбільшого <code>&lt;h1&gt;</code> до найменшого <code>&lt;h6&gt;</code>.
+          </li>
+          <li>
+            <code>&lt;p&gt;</code> – параграф тексту.
+          </li>
+          <li>
+            <code>&lt;a href="URL"&gt;</code> – гіперпосилання.
+          </li>
+          <li><code>&lt;img src="URL" alt="Опис зображення"&gt;</code> – зображення.
+          </li>
+          <li>
+            <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code> – списки (маркерований, нумерований, елемент списку).
+          </li>
+        </ul>
         
+        <p>Тепер перевір свої знання. Дай відповіді на запитання:</p>
+        <h3>Тестування</h3>
+          <details>
+            <summary>Що таке HTML і для чого він використовується?</summary>
+            <p class="answer"><b>HTML</b> – це мова розмітки для створення веб-сторінок.</p>
+          </details>
+          <details>
+            <summary>Які теги використовується для заголовків на сторінці?</summary>
+            <p class="answer">Заголовки на сторінці створюються тегами <code>&lt;h1&gt;</code> ... <code>&lt;h6&gt;</code></p>
+          </details>
+          <details>
+            <summary>Який тег потрібен для створення посилання?</summary>
+            <p class="answer">Тег <code>&lt;a href="URL"&gt;</code> використовується для створення посилання.</p>
+          </details>
+          <details>
+            <summary>Що робить тег <code>&lt;p&gt;</code>?</summary>
+            <p class="answer">Тег <code>&lt;p&gt;</code> створює параграф тексту.</p>
+          </details>
+          <details>
+            <summary>Як додати зображення на сторінку? Напиши приклад коду.</summary>
+            <p class="answer">За допомогою коду <code>&lt;img src="URL" alt="Опис зображення"&gt;</code> можна додати зображення на сторінку.</p>
+          </details>
+        </ol>
+      </section>
     </main>
     
     <footer class="footer-html">

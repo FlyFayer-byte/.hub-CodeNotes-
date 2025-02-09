@@ -21,11 +21,262 @@
         </nav>
     </header>
 
-    <main>
-        
+    <!-- Бокове ліве меню -->
+    <aside class="left-sidebar">
+        <nav>
+            <ul>
+                <li><a href="#js_basics">Основи JavaScript</a></li>
+                <li><a href="#DOM_basics">Основи DOM</a></li>
+                
+                <li class="dropdown">
+                  <a href="#basic-tags" class="dropbtn"></a>
+                  <ul class="dropdown-content">
+                    <li><a href="#headings"></a></li>
+                    <li><a href="#paragraphs"></a></li>
+                    <li><a href="#links"></a></li>
+                  </ul>
+                </li>
+                <!-- інші пункти -->
+              </ul>
+            </ul>
+        </nav>
+    </aside>
+     <!-- Бокове праве меню -->
+     <aside class="right-sidebar">
+        <nav>
+          <ul>
+            <!-- Можна розмістити додаткову навігацію або корисні посилання -->
+            <li><a href="#resources">Ресурси</a></li>
+            <li><a href="#contact">Контакти</a></li>
+          </ul>
+        </nav>
+    </aside>
+
+    <main class="main-sidebar">
+      <h1>Цей навчальний матеріал створений спільно з <a href="https://chatgpt.com">ChatGPT-4o</a>.</h1>
+      <!--Урок 3: Основи JavaScript-->
+      <h2 id="js_basics">Основи JavaScript</h2>
+      <section>
+        <h3>Що таке JavaScript?</h3>
+        <p><b>JavaScript (JS)</b> – це мова програмування, яка додає інтерактивність до веб-сторінок. Завдяки JS можна створювати динамічний контент, реагувати на дії користувача та маніпулювати HTML-елементами.</p>
+        <h3>Способи підключення JavaScript</h3>
+        <p>Існує три способи додавання JS-коду до HTML:</p>
+        <ol>
+          <li>
+            <b>Вбудований</b> (inline) – код прописується безпосередньо в атрибуті <code>onclick</code> або іншому обробнику подій.
+          </li>
+          <pre><code>&lt;button onclick="alert('Привіт, світ!')"&gt;Натисни мене&lt;/button&gt;</code></pre>
+          <p>Результат:</p>
+          <button onclick="alert('Привіт, світ!')">Натисни мене</button>
+          <li>
+            <b>Внутрішній</b> (internal) – код розміщується у <code>&lt;script&gt;</code> всередині HTML-документа.
+          </li>
+          <pre><code>&lt;script&gt;
+  alert("Привіт, світ!");
+&lt;/script&gt;
+</code></pre>
+          <li>
+            <b>Зовнішній</b> (external) – код пишеться в окремому файлі <code>.js</code> і підключається через <code>&lt;script&gt;</code>.
+          </li>
+          <pre><code>&lt;head&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+          <p>Файл <code>script.js</code>:</p>
+          <pre><code>alert("Привіт, світ!");
+</code></pre>
+        </ol>
+        <p>Основні можливості JavaScript</p>
+        <p>JS використовується для:<br>
+          ✅ Роботи з HTML-елементами (зміна тексту, стилів, класів)<br>
+          ✅ Обробки подій (натискання кнопок, рух миші)<br>
+          ✅ Виконання обчислень і логічних операцій
+        </p>
+        <h3>Змінні в JavaScript</h3>
+        <p>
+          Змінні використовуються для збереження даних. Вони оголошуються за допомогою <code>let</code>, <code>const</code> або <code>var</code>:
+        </p>
+        <pre><code>let ім’я = "Олексій";
+const вік = 25;
+var місто = "Київ";
+</code></pre>
+        <table>
+          <thead>
+            <tr>
+              <th>Властивість</th>
+              <th><code>var</code></th>
+              <th><code>let</code></th>
+              <th><code>const</code></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Область видимості</td>
+              <td>Функціональна або глобальна</td>
+              <td>Блокова</td>
+              <td>Блокова</td>
+            </tr>
+            <tr>
+              <td>Підняття (Hoisting)</td>
+              <td>Так, але значення <code>undefined</code></td>
+              <td>Так, але без ініціалізації (ReferenceError)</td>
+              <td>Так, але без ініціалізації (ReferenceError)</td>
+            </tr>
+            <tr>
+              <td>Можна змінювати значення?</td>
+              <td>Так</td>
+              <td>Так</td>
+              <td>Ні</td>
+            </tr>
+            <tr>
+              <td>Можна повторно оголошувати?</td>
+              <td>Так</td>
+              <td>Ні</td>
+              <td>Ні</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Коли що використовувати?</h3>
+        <ul>
+          <li>
+            Використовуйте <strong><code>const</code></strong>, якщо значення не змінюється.
+          </li>
+          <li>
+            Використовуйте <strong><code>let</code></strong>, якщо потрібно змінювати значення.
+          </li>
+          <li>
+            Не використовуйте <strong><code>var</code></strong>, оскільки він має недоліки, пов'язані з глобальною областю видимості та підняттям.
+          </li>
+        </ul>
+        <p>Взаємодія з користувачем</p>
+        <pre><code>alert("Привіт!");                          // Виведе сповіщення  
+console.log("Це повідомлення у консолі");  // Виведе текст у консоль  
+let ім’я = prompt("Як тебе звати?");       // Запитає ім’я користувача  </code></pre>
+        <p>
+          Функція <strong><code>alert()</code></strong> у JavaScript використовується для виведення простого діалогового вікна з повідомленням для користувача. Це модальне вікно, яке блокує взаємодію з іншими частинами веб-сторінки, поки користувач не закриє його, натиснувши <strong>"ОК"</strong>.
+        </p>
+        <p>
+          Функція <strong><code>console.log()</code></strong> у JavaScript використовується для виведення інформації в консоль браузера або середовища виконання (наприклад, Node.js). Це один із найпоширеніших способів <strong>відлагодження коду</strong>.
+        </p>
+        <p>
+          Функція <strong><code>prompt()</code></strong> у JavaScript використовується для виведення діалогового вікна, яке запитує введення даних від користувача. Вона повертає рядок, введений користувачем, або <code>null</code>, якщо користувач натисне <strong>"Скасувати" (Cancel)</strong>.
+        </p>
+        <p>Тепер перевір свої знання. Дай відповіді на запитання:</p>
+        <h3>Тестування</h3>
+          <details>
+            <summary>Які є три способи підключення JavaScript?</summary>
+            <ul>
+              <li>
+                <b>Вбудований</b> (inline) – код прописується безпосередньо в атрибуті <code>onclick</code> або іншому обробнику подій.
+              </li>
+              <li>
+                <b>Внутрішній</b> (internal) – код розміщується у <code>&lt;script&gt;</code> всередині HTML-документа.
+              </li>
+              <li>
+                <b>Зовнішній</b> (external) – код пишеться в окремому файлі <code>.js</code> і підключається через <code>&lt;script&gt;</code>.
+              </li>
+            </ul>
+          </details>
+          <details>
+            <summary>Чим відрізняються <code>let</code>, <code>const</code> і <code>var</code>?</summary>
+            <ul>
+              <li>
+                Використовуйте <strong><code>const</code></strong>, якщо значення не змінюється.
+              </li>
+              <li>
+                Використовуйте <strong><code>let</code></strong>, якщо потрібно змінювати значення.
+              </li>
+              <li>
+                Не використовуйте <strong><code>var</code></strong>, оскільки він має недоліки, пов'язані з глобальною областю видимості та підняттям.
+              </li>
+            </ul>
+          </details>
+          <details>
+            <summary>Як вивести повідомлення у консоль?</summary>
+            <pre><code>console.log("Це повідомлення у консолі");  // Виведе текст у консоль </code></pre>
+          </details>
+          <details>
+            <summary>Що робить <code>prompt()</code>?</summary>
+            <p>
+              Функція <strong><code>prompt()</code></strong> у JavaScript використовується для виведення діалогового вікна, яке запитує введення даних від користувача.
+            </p>
+          </details>
+          <details>
+            <summary>Як підключити зовнішній JavaScript-файл до HTML? Напиши приклад.</summary>
+              <b>Зовнішній</b> (external) – код пишеться в окремому файлі <code>.js</code> і підключається через <code>&lt;script&gt;</code>.
+            <pre><code>&lt;head&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+          </details>
+      </section>
+      <!--Урок 4: Основи DOM-->
+      <h2 id="DOM_basics">Основи DOM</h2>
+      <section>
+        <h3>Що таке DOM?</h3>
+        <p>
+          <b>DOM (Document Object Model)</b> – це об'єктна модель, яка представляє структуру веб-сторінки як деревоподібну структуру, де кожен елемент (тег, атрибут, текст) є об'єктом. За допомогою JavaScript можна отримувати доступ до елементів сторінки та змінювати їх.
+        </p>
+        <h3>Основні методи роботи з DOM</h3>
+        <ol>
+          <li>
+            <b>Отримання елементів</b>
+            <ul>
+              <li>
+                <code>getElementById(id)</code> – отримує елемент за його унікальним ID.
+              </li>
+              <pre><code>let element = document.getElementById("myElement");</code></pre>
+              <li>
+                <code>getElementsByClassName(className)</code> – отримує елементи за класом.
+              </li>
+              <pre><code>let elements = document.getElementsByClassName("myClass");</code></pre>
+              <li>
+                <code>getElementsByTagName(tagName)</code> – отримує елементи за тегом.
+              </li>
+              <pre><code>let elements = document.getElementsByTagName("p");</code></pre>
+            </ul>
+          </li>
+          <li>
+            <b>Зміна елементів</b>
+            <ul>
+              <li>
+                <code>innerHTML</code> – змінює вміст елемента.
+              </li>
+              <pre><code>let element = document.getElementById("myElement");
+element.innerHTML = "Новий текст!";
+                </code></pre>
+              <li>
+                <code>style</code> – змінює стиль елемента.
+              </li>
+              <pre><code>let element = document.getElementById("myElement");
+element.style.color = "red";
+element.style.fontSize = "20px";
+</code></pre>
+            </ul>
+          </li>
+          <li>
+            <b>Додавання та видалення елементів</b>
+            <ul>
+              <li>
+                <code>createElement(tagName)</code> – створює новий елемент.
+              </li>
+              <pre><code>let newElement = document.createElement("p");
+newElement.innerHTML = "Це новий абзац!";
+document.body.appendChild(newElement);
+</code></pre>
+              <li>
+                <code>removeChild(childElement)</code> – видаляє елемент.
+              </li>
+              <pre><code>let element = document.getElementById("myElement");
+document.body.removeChild(element);
+</code></pre>
+            </ul>
+          </li>
+        </ol>
+      </section>
     </main>
     
-    <footer>
+    <footer class="footer-html">
         <p>&copy; 2025 .hub{CodeNotes}. Усі права захищені.</p>
     </footer>
     

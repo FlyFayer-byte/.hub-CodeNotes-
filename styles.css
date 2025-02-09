@@ -49,6 +49,8 @@ main {
 }
 
 .main-sidebar {
+    display: block;
+    margin-top: 220px;
     margin-left: 290px;
     margin-right: 290px;
     flex: 1; /* Заповнює весь доступний простір */
@@ -164,6 +166,7 @@ main {
 
 /* 🌐 Шапка сайту */
 header {
+    position:fixed;
     background: rgba(0, 0, 0, 0.9);
     padding: 1rem 0;
     position: fixed;
@@ -215,6 +218,14 @@ nav ul li a:hover {
 }
 
 /* 📜 Навігація з випадаючими списка */
+
+li {
+    margin-top: 3px;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
 
 /* 📌 Футер */
 footer {
@@ -326,4 +337,27 @@ footer {
 a:focus, button:focus {
     outline: 2px dashed var(--neon-green);
     outline-offset: 2px;
+}
+
+/* index.html */
+#greeting {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+code {
+    background-color: #fff;
+    color: #002;
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+pre code {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.answer {
+    padding-left: 15px;
 }
