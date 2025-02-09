@@ -72,7 +72,7 @@ function addEntry() {
 
     console.log("📝 Відправляємо дані:", { type, name, description, category, example_code });
 
-    if (!type || !name || !description || !category || !example_code) {
+    if (!type || !name || !description) {
         alert("❌ Всі поля мають бути заповнені!");
         return;
     }
