@@ -1,43 +1,35 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.hub{CodeNotes}</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div id="logo">.hub{CodeNotes}</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="html.html">HTML</a></li>
-                <li><a href="css.html">CSS</a></li>
-                <li><a href="js.html">JavaScript</a></li>
-                <li><a href="db.html">Довідник</a></li>
-                <li><a href="code_editor.html">Code Editor</a></li>
-            </ul>
-        </nav>
+      <div id="logo">.hub{CodeNotes}</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="js.html">JavaScript</a></li>
+          <li><a href="db.html">Довідник</a></li>
+          <li><a href="code_editor.html">Code Editor</a></li>
+        </ul>
+      </nav>
     </header>
     
     <!-- Бокове ліве меню -->
     <aside class="left-sidebar">
-        <nav>
-            <ul>
-                <li><a href="#html_basics">Основи HTML</a></li>
-                <li class="dropdown">
-                  <a href="#basic-tags" class="dropbtn"></a>
-                  <ul class="dropdown-content">
-                    <li><a href="#headings"></a></li>
-                    <li><a href="#paragraphs"></a></li>
-                    <li><a href="#links"></a></li>
-                  </ul>
-                </li>
-                <!-- інші пункти -->
-              </ul>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="#html_basics">Основи HTML</a>
+          </li>
+        </ul>
+      </nav>
     </aside>
      <!-- Бокове праве меню -->
      <aside class="right-sidebar">
@@ -55,10 +47,19 @@
       <h2 id="html_basics">Основи HTML</h2>
       <!--Урок 1: Основи HTML-->
       <section>
+        
         <h3>Що таке HTML?</h3>
-        <p><b>HTML (HyperText Markup Language)</b> – це мова розмітки гіпертексту, яка використовується для створення веб-сторінок. Вона визначає структуру сторінки за допомогою спеціальних тегів.</p>
+        <p>
+          <b>HTML (HyperText Markup Language)</b> – це мова розмітки гіпертексту, яка використовується для створення веб-сторінок. Вона визначає структуру сторінки за допомогою спеціальних тегів.
+        </p>
+        
         <h3>Основні теги HTML</h3>
-        <p>HTML складається з <b>тегів</b>, які розміщуються в кутових дужках &lt; &gt;. Наприклад:</p>
+        <p>
+          HTML складається з <b>тегів</b>, які розміщуються в кутових дужках &lt; &gt;. 
+        </p>
+        
+        <p>Наприклад:</p>
+        
         <pre><code>&lt;p&gt;Це параграф&lt;/p&gt;</code></pre>
         <p>Більшість тегів мають відкриваючий <code>&lt;p&gt;</code> і закриваючий <code>&lt;/p&gt;</code>.</p>
         <p>Ось мінімальна структура HTML-документа:</p>
@@ -101,7 +102,7 @@
             <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code> – списки (маркерований, нумерований, елемент списку).
           </li>
         </ul>
-        
+
         <p>Тепер перевір свої знання. Дай відповіді на запитання:</p>
         <h3>Тестування</h3>
           <details>
@@ -133,5 +134,5 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

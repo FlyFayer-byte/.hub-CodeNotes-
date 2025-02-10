@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.hub{CodeNotes}</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div id="logo">.hub{CodeNotes}</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="html.html">HTML</a></li>
-                <li><a href="css.html">CSS</a></li>
-                <li><a href="js.html">JavaScript</a></li>
-                <li><a href="db.html">Довідник</a></li>
-                <li><a href="code_editor.html">Code Editor</a></li>
-            </ul>
-        </nav>
+      <div id="logo">.hub{CodeNotes}</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="js.html">JavaScript</a></li>
+          <li><a href="db.html">Довідник</a></li>
+          <li><a href="code_editor.html">Code Editor</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Бокове ліве меню -->
@@ -556,6 +556,57 @@ console.log("Сума всіх чисел: " + sum);
         </p>
         <b>Основні типи циклів у JavaScript</b>
         <ol><li><strong>for</strong> – Використовується, коли відома точна кількість ітерацій.</li><li><strong>while</strong> – Виконується, поки певна умова є істинною.</li><li><strong>do...while</strong> – Виконується хоча б один раз, а потім продовжує виконання, поки умова істинна.</li><li><strong>for...of</strong> – Перебирає елементи масиву або іншої колекції.</li><li><strong>for...in</strong> – Використовується для перебору властивостей об'єкта.</li></ol>
+
+        <b>Приклад циклу <code>for</code></b>
+        <pre><code>for (let i = 0; i < 5; i++) {
+  console.log("Ітерація №" + (i + 1));
+}</code></pre>
+        <b>👉 Виведе:</b>
+        <pre><code>Ітерація №1  
+Ітерація №2  
+Ітерація №3  
+Ітерація №4  
+Ітерація №5 </code></pre>
+
+        <b>Приклад циклу <code>while</code></b>
+        <pre><code>let num = 0;
+while (num &lt; 3) {
+  console.log("Число: " + num);
+  num++;
+}</code></pre>
+        <b>👉 Виведе:</b>
+        <pre><code>Число: 0  
+Число: 1  
+Число: 2</code></pre>
+        <b>✅ Твоє перше завдання по темі:</b>
+        <ol>
+          <li>
+            <strong>Створи цикл <code>for</code>, який виведе числа від 1 до 10 в консоль.</strong>
+          </li>
+          <b>Правильний код:</b>
+          <pre><code>for (let i = 0; i &lt; 10; i++) {
+  console.log(i +1);
+}</code></pre>
+          <li>
+            <strong>Створи цикл <code>while</code>, який буде віднімати 2 від змінної <code>x</code>, доки <code>x</code> не стане менше 0 (початкове значення <code>x = 10</code>).</strong>
+          </li>
+          <b>Правильний код:</b>
+            <pre><code>let x = 10;
+while (x >= 0) {
+  console.log(x);
+  x = x - 2;
+}</code></pre>
+        </ol>
+        <b>🔹 Хочеш ускладнити завдання?</b>
+        <p>
+          Напиши <strong>цикл <code>do...while</code></strong>, який працює так само: віднімає <code>2</code> від <code>x</code>, але з <strong>обов’язковим першим виконанням коду</strong>, навіть якщо <code>x</code> відразу менше 0
+        </p>
+        <pre><code>let x = 10;
+do {
+  console.log(x); //Виводимо значення x
+  x -= 2;         //Віднімаємо 2
+} while (x > 0);</code></pre>
+        <h3>🔥 Вкладені цикли</h3>
       </section>
     </main>
     
@@ -566,5 +617,5 @@ console.log("Сума всіх чисел: " + sum);
     <script src="script.js"></script>
     
         
-</body>
+  </body>
 </html>
