@@ -65,15 +65,15 @@
     </header>
 
     <main>
-        <h1>Довідник HTML CSS & JavaScript</h1>
+        <h1>Довідник: HTML, CSS & JavaScript</h1>
         <input type="text" id="searchInput" placeholder="🔍 Пошук записів..." oninput="searchEntries()">
         <button onclick="openModal()">➕ Додати запис</button>
         
         <table id="dbTable">
             <thead>
                 <tr>
-                    <th onclick="sortTable(0)">Елементи 🔽</th>
-                    <th onclick="sortTable(1)">Назва 🔽</th>
+                    <th onclick="sortTable(0)">Категорія 🔽</th>
+                    <th onclick="sortTable(1)">Теги, стилі, атрибути, функції 🔽</th>
                     <th>Опис</th>
                     <th>Категорія</th>
                     <th>Приклад коду</th>
@@ -96,7 +96,7 @@
 
         <input type="hidden" id="entryId">
         
-        <label>Тип: 
+        <label>Категорія: 
             <select id="entryType">
                 <option value="HTML">HTML</option>
                 <option value="CSS">CSS</option>
@@ -104,7 +104,7 @@
             </select>
         </label>
         
-        <label>Назва: <input type="text" id="entryName"></label>
+        <label>Тег: <input type="text" id="entryName"></label>
         
         <label>Опис: <textarea id="entryDescription"></textarea></label>
 

@@ -16,7 +16,19 @@ body {
     background: linear-gradient(45deg, var(--bg-dark), #002); /* Градієнтний фон */
     color: #fff;
 }
-
+h2 {
+    
+    margin: 0 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 212, 0.8), 0 0 20px rgba(0, 255, 212, 0.5); /* Тінь для ефекту */
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: 600;
+}
+h3 {
+    color: var(--neon-green);
+}
 /* Стиль для логотипа */
 #logo {
     display:inline-block;    
