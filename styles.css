@@ -41,6 +41,19 @@ p {
     text-indent: 25px;
     margin-left: 10px;
 }
+/* Стилі для прикладів коду */
+.exempel_code {
+   margin-left: 18px; 
+}
+details b {
+    margin: 0;
+    margin-left: 18px; 
+}
+details pre {
+    margin: 0;
+    margin-left: 18px; 
+}
+
 /* Стиль для логотипа */
 #logo {
     display:inline-block;    

@@ -47,6 +47,17 @@
     opacity: 1;
     display: block;
 }
+
+.textarea {
+  display: block;
+  width: 100%;
+  resize: none;
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
     </style>
   </head>
   <body>
@@ -87,7 +98,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 .hub{CodeNotes}. Усі права захищені.</p>
+      <p>&copy; 2025 .hub{CodeNotes}. Усі права захищені.</p>
     </footer>
 
     <!-- Модальне вікно -->
@@ -102,13 +113,22 @@
                 <option value="CSS">CSS</option>
                 <option value="JavaScript">JavaScript</option>
             </select>
-        </label>
+        </label><br>
         
-        <label>Тег: <input type="text" id="entryName"></label>
+        <label>Тег: <textarea type="text" id="entryName"></textarea></label><br>
         
-        <label>Опис: <textarea id="entryDescription"></textarea></label>
+        <label>Опис: <textarea id="entryDescription"></textarea></label><br>
 
-        <input type="text" id="entryCategory" placeholder="Категорія">
+        <label>Категорія: 
+            <select id="entryCategory">
+                <option value="HTML теґ">HTML теґ</option>
+                <option value="DOM in JS">DOM in JS</option>
+                <option value="Масиви в JS">Масиви в JS</option>
+                <option value="Метод перебору масиву">Метод перебору масиву</option>
+            </select>
+        </label><br>
+
+        <!--<input type="text" id="entryCategory" placeholder="Категорія">-->
 
         <textarea id="entryExample" placeholder="Приклад коду..."></textarea>
         
@@ -136,7 +156,7 @@
     data.forEach(entry => {
         const row = `<tr>
             <td>${entry.type}</td>
-            <td><code>${entry.name}</code></td>
+            <td><textarea class="textarea" rows="1" readonly>${entry.name}</textarea></td>
             <td>${entry.description}</td>
             <td>${entry.category}</td>
             <td><pre>${entry.example_code}</pre></td>
@@ -212,6 +232,6 @@
                 loadEntries();
             });
         }
-    </script>
+        </script>
   </body>
 </html>

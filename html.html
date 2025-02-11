@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.hub{CodeNotes}</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,7 +22,7 @@
       </nav>
     </header>
     
-    <!-- Бокове ліве меню -->
+    <!-- Бокове меню зліва -->
     <aside class="left-sidebar">
       <nav>
         <ul>
@@ -31,41 +32,49 @@
         </ul>
       </nav>
     </aside>
-     <!-- Бокове праве меню -->
+
+    <!-- Бокове праве справа -->
      <aside class="right-sidebar">
         <nav>
           <ul>
             <!-- Можна розмістити додаткову навігацію або корисні посилання -->
-            <li><a href="#resources">Ресурси</a></li>
-            <li><a href="#contact">Контакти</a></li>
           </ul>
         </nav>
     </aside>
     
+    <!-- Вміст сторінки -->
     <main class="main-sidebar">
       <h1>
         Цей навчальний матеріал створений спільно з <a href="https://chatgpt.com">ChatGPT-4o</a>.
       </h1>
       
+      <!--ОСНОВИ HTML-->
       <h2>Основи HTML</h2>
-      <!--Урок 1: Основи HTML-->
       <section>
+        <!--Що таке HTML?-->
         <h3>Що таке HTML?</h3>
         <p>
           <b>HTML (HyperText Markup Language)</b> – це мова розмітки гіпертексту, яка використовується для створення веб-сторінок. Вона визначає структуру сторінки за допомогою спеціальних тегів.
         </p>
-        
+        <!--Основні теги HTML-->
         <h3>Основні теги HTML</h3>
         <p>
-          HTML складається з <b>тегів</b>, які розміщуються в кутових дужках &lt; &gt;. 
+          HTML складається з <b>тегів</b>, які розміщуються в кутових дужках <code>&lt; &gt;</code>. 
         </p>
-        
-        <p>Наприклад:</p>
-        
-        <pre><code>&lt;p&gt;Це параграф&lt;/p&gt;</code></pre>
-        <p>Більшість тегів мають відкриваючий <code>&lt;p&gt;</code> і закриваючий <code>&lt;/p&gt;</code>.</p>
-        <p>Ось мінімальна структура HTML-документа:</p>
-        <pre><code>&lt;!DOCTYPE html>
+        <!--Приклад коду-->
+        <details class="exempel_code" open>
+          <summary>Наприклад:</summary>
+            <b>HTML</b>
+            <pre><code>&lt;p&gt;Це параграф&lt;/p&gt;</code></pre>
+        </details> 
+        <p>
+          Більшість тегів мають <b>відкриваючий</b> <code>&lt;p&gt;</code> і <b>закриваючий</b> <code>&lt;/p&gt;</code>.
+        </p>
+        <!--Приклад коду-->
+        <details class="exempel_code" open>
+          <summary>Ось мінімальна структура HTML-документа:</summary>
+            <b>HTML</b>
+            <pre><code>&lt;!DOCTYPE html>
 &lt;html>
   &lt;head>
     &lt;title>Моя перша веб-сторінка&lt;/title>
@@ -75,7 +84,9 @@
     &lt;p>Це мій перший HTML-документ.&lt;/p>
   &lt;/body>
 &lt;/html></code></pre>
-        <h4>Опис основних тегів:</h4>
+        </details>
+        <!--Опис основних тегів:-->
+        <h3>Опис основних тегів:</h3>
         <ul>
           <li>
             <code>&lt;html&gt;</code> – огортає весь HTML-код.
@@ -131,10 +142,9 @@
       </section>
     </main>
     
+    <!-- Футер вебсторінки -->
     <footer class="footer-html">
-        <p>&copy; 2025 .hub{CodeNotes}. Усі права захищені.</p>
+      <p>&copy; 2025 .hub{CodeNotes}. Усі права захищені.</p>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
