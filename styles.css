@@ -16,6 +16,11 @@ body {
     background: linear-gradient(45deg, var(--bg-dark), #002); /* Градієнтний фон */
     color: #fff;
 }
+/* Основні налаштування заголовкових тексті <h1> ... <h2> */
+h1 {
+    padding-top: 10px;
+    text-align: center;
+}
 h2 {
     justify-self: center;
     box-shadow: 0 0 10px rgba(0, 255, 212, 0.8), 0 0 20px rgba(0, 255, 212, 0.5); /* Тінь для ефекту */
@@ -27,6 +32,11 @@ h3 {
     color: var(--neon-green);
     margin-left: 35px;
 }
+h4 {
+    margin-left: 35px;
+    font-size: large;
+}
+/* Основні налаштування абзаців */
 p {
     text-indent: 25px;
     margin-left: 10px;
@@ -189,11 +199,6 @@ header {
     left: 0;
     z-index: 10;
     box-shadow: 0 0 15px var(--neon-green);
-    text-align: center;
-}
-
-h1 {
-    padding-top: 10px;
     text-align: center;
 }
 
