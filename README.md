@@ -2,11 +2,12 @@
 /codenotes
  ├── server.js
  ├── .env
- ├── /public
- │    ├── index.html
- │    ├── db.html
- │    ├── css.html
- │    ├── js.html
- │    ├── html.html
- │    ├── styles.css
- │    ├── script.js
+ ├── /public_html
+ │   ├── index.html
+ │   ├── htlm.html
+ │   ├── css.html
+ │   ├── js.html
+ │   ├── sql.html
+ |   ├── 
+ │   ├── styles.css
+ │   ├── script.js
