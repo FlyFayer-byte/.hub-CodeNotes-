@@ -32,6 +32,23 @@
       <main class="content" id="content">
         
       </main>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Викликаємо loadPage для завантаження home.html автоматично при відкритті index.html
+            loadPage('home.html');
+        });
+
+        function loadPage(page) {
+            document.getElementById("content").innerHTML = ""; // Очищаємо перед завантаженням
+
+            fetch(`pages/${page}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("content").innerHTML = data;
+                })
+                .catch(error => console.error("Помилка завантаження:", error));
+        }
+    </script>
     </div>
   </body>
 </html>
