@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.hub{CodeNotes}</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    
+    <header>
+      <div id="logo">.hub{CodeNotes}</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="js.html">JavaScript</a></li>
+          <li><a href="db.html">Довідник</a></li>
+          <li><a href="code_editor.html">Code Editor</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- Бокове меню зліва -->
+    <aside class="left-sidebar">
+      <nav>
+        <ul>
+          <li>
+            <a href="#html_basics">Основи HTML</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Бокове праве справа -->
+     <aside class="right-sidebar">
+        <nav>
+          <ul>
+            <!-- Можна розмістити додаткову навігацію або корисні посилання -->
+          </ul>
+        </nav>
+    </aside>
+    
+    <!-- Вміст сторінки -->
+    <main class="main-sidebar">
+      <h1>Цей навчальний матеріал створений спільно з <a href="https://chatgpt.com">ChatGPT-4o</a>.</h1>
+
+      <!--ОСНОВИ HTML-->
+      <h2>Основи HTML</h2>
+      <section>
+        <!--Що таке HTML?-->
+        <h3>Що таке HTML?</h3>
+        <p>
+          <b>HTML (HyperText Markup Language)</b> – це мова розмітки гіпертексту, яка використовується для створення веб-сторінок. Вона визначає структуру сторінки за допомогою спеціальних тегів.
+        </p>
+        <!--Основні теги HTML-->
+        <h3>Основні теги HTML</h3>
+        <p>
+          HTML складається з <b>тегів</b>, які розміщуються в кутових дужках <code>&lt; &gt;</code>. 
+        </p>
+        <!--Приклад коду-->
+        <details class="exempel_code" open>
+          <summary>Наприклад:</summary>
+            <b>HTML</b>
+            <pre><code>&lt;p&gt;Це параграф&lt;/p&gt;</code></pre>
+        </details> 
+        <p>
+          Більшість тегів мають <b>відкриваючий</b> <code>&lt;p&gt;</code> і <b>закриваючий</b> <code>&lt;/p&gt;</code>.
+        </p>
+        <!--Приклад коду-->
+        <details class="exempel_code" open>
+          <summary>Ось мінімальна структура HTML-документа:</summary>
+            <b>HTML</b>
+            <pre><code>&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>Моя перша веб-сторінка&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;h1>Привіт, світ!&lt;/h1>
+    &lt;p>Це мій перший HTML-документ.&lt;/p>
+  &lt;/body>
+&lt;/html></code></pre>
+        </details>
+        <!--Опис основних тегів:-->
+        <h3>Опис основних тегів:</h3>
+        <ul>
+          <li>
+            <code>&lt;html&gt;</code> – огортає весь HTML-код.
+          </li>
+          <li>
+            <code>&lt;head&gt;</code> – містить метаінформацію (назву сторінки, стилі тощо).
+          </li>
+          <li>
+            <code>&lt;title&gt;</code> – задає заголовок сторінки у вкладці браузера.
+          </li>
+          <li>
+            <code>&lt;body&gt;</code> – містить весь контент, який бачить користувач.
+          </li>
+          <li>
+            <code>&lt;h1&gt; ... &lt;h6&gt;</code> – використовуються для заголовків на сторінці від найбільшого <code>&lt;h1&gt;</code> до найменшого <code>&lt;h6&gt;</code>.
+          </li>
+          <li>
+            <code>&lt;p&gt;</code> – параграф тексту.
+          </li>
+          <li>
+            <code>&lt;a href="URL"&gt;</code> – гіперпосилання.
+          </li>
+          <li><code>&lt;img src="URL" alt="Опис зображення"&gt;</code> – зображення.
+          </li>
+          <li>
+            <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code> – списки (маркерований, нумерований, елемент списку).
+          </li>
+        </ul>
+
+        <p>Тепер перевір свої знання. Дай відповіді на запитання:</p>
+        <h4>Тестування</h4>
+          <details>
+            <summary>Що таке HTML і для чого він використовується?</summary>
+            <p class="answer"><b>HTML</b> – це мова розмітки для створення веб-сторінок.</p>
+          </details>
+          <details>
+            <summary>Які теги використовується для заголовків на сторінці?</summary>
+            <p class="answer">Заголовки на сторінці створюються тегами <code>&lt;h1&gt;</code> ... <code>&lt;h6&gt;</code></p>
+          </details>
+          <details>
+            <summary>Який тег потрібен для створення посилання?</summary>
+            <p class="answer">Тег <code>&lt;a href="URL"&gt;</code> використовується для створення посилання.</p>
+          </details>
+          <details>
+            <summary>Що робить тег <code>&lt;p&gt;</code>?</summary>
+            <p class="answer">Тег <code>&lt;p&gt;</code> створює параграф тексту.</p>
+          </details>
+          <details>
+            <summary>Як додати зображення на сторінку? Напиши приклад коду.</summary>
+            <p class="answer">За допомогою коду <code>&lt;img src="URL" alt="Опис зображення"&gt;</code> можна додати зображення на сторінку.</p>
+          </details>
+        </ol>
+      </section>
+    </main>
+    
+    <!-- Футер вебсторінки -->
+    <footer class="footer-html">
+      <p>&copy; 2025 .hub{CodeNotes}. Усі права захищені.</p>
+    </footer>
+  </body>
+</html>

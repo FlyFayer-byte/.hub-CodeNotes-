@@ -1,395 +1,65 @@
-/* 🌌 Глобальні змінні для темного неонового стилю */
-:root {
-    --neon-green: #0ff;  /* Бірюзовий неоновий колір */
-    --neon-blue: #08f;   /* Синій неоновий колір */
-    --bg-dark: #001a1a;  /* Темний фон */
-}
-
-/* 🌍 Основні налаштування для сторінки */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: 'Courier New', monospace; /* Класичний моноширинний шрифт */
+* {
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, var(--bg-dark), #002); /* Градієнтний фон */
-    color: #fff;
-}
-/* Основні налаштування заголовкових тексті <h1> ... <h2> */
-h1 {
-    padding-top: 10px;
-    text-align: center;
-}
-h2 {
-    justify-self: center;
-    box-shadow: 0 0 10px rgba(0, 255, 212, 0.8), 0 0 20px rgba(0, 255, 212, 0.5); /* Тінь для ефекту */
-    border-radius: 5px;
-    padding: 1px 5px;
-    font-weight: 900;
-}
-h3 {
-    color: var(--neon-green);
-    margin-left: 35px;
-}
-h4 {
-    margin-left: 35px;
-    font-size: large;
-}
-/* Основні налаштування абзаців */
-p {
-    text-indent: 25px;
-    margin-left: 10px;
-}
-/* Стилі для прикладів коду */
-.exempel_code {
-   margin-left: 18px; 
-}
-details b {
-    margin: 0;
-    margin-left: 18px; 
-}
-details pre {
-    margin: 0;
-    margin-left: 18px; 
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* Стиль для логотипа */
-#logo {
-    display:inline-block;    
-    justify-self: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 36px;
-    font-weight: bold;
-    color: #00FFD1; /* Неоново-синій колір */
-    background: linear-gradient(45deg, #00FFD1, #00BFFF); /* Градієнт */
-    -webkit-background-clip: text; /* Текст з градієнтом */
-    color: transparent; /* Текст прозорий */
-    letter-spacing: 2px;
-    padding: 5px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 255, 212, 0.8), 0 0 20px rgba(0, 255, 212, 0.5); /* Тінь для ефекту */
-    transition: transform 0.3s ease-in-out;
-}
-
-#logo:hover {
-    transform: scale(1.1); /* Логотип збільшується при наведенні */
-}
-
-/* 📌 Основний контейнер сторінки */
-main {
-
-    flex: 1; /* Заповнює весь доступний простір */
-    padding: 20px;
-    margin-top: 5rem;
-}
-
-.main-sidebar {
-    display: block;
-    margin-top: 220px;
-    margin-left: 290px;
-    margin-right: 290px;
-    flex: 1; /* Заповнює весь доступний простір */
-    padding: 20px;
-    margin-top: 5rem;
-}
-
-/* Стилі для лівого та правого бокового меню (sidebar) */
-.left-sidebar {
-    position: fixed;
-    top: 120px;  /* Відступ від верхнього краю з урахуванням header */
-    left: 0;
-    width: 250px;
-    height: calc(100% - 120px);
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 255, 212, 0.5);
-    overflow-y: auto;
-    z-index: 9;
-}
-
-.left-sidebar nav ul {
-    display: block;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.left-sidebar nav ul li {
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.left-sidebar nav ul li a {
-    color: var(--neon-green);
-    text-decoration: none;
-    font-size: 1em;
-    transition: color 0.3s;
-}
-
-.left-sidebar nav ul li a:hover {
-    color: #57ebde;
-}
-
-.left-sidebar .dropdown-content {
-    display: none;
-    margin-left: 10px;
-    margin-right: 10px;
-    list-style-type: none;
-    padding: 5px 0;
-}
-
-.left-sidebar .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.left-sidebar .dropdown .dropbtn {
-    cursor: pointer;
-}
-
-/* Стилі для лівого бокового меню (sidebar) */
-.right-sidebar {
-    position: fixed;
-    top: 120px;  /* Відступ від верхнього краю з урахуванням header */
-    right: 0;
-    width: 250px;
-    height: calc(100% - 120px);
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    box-shadow: -2px 0 5px rgba(0, 255, 212, 0.5);
-    overflow-y: auto;
-    z-index: 9;
-}
-
-.right-sidebar nav ul {
-    display: block;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.right-sidebar nav ul li {
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.right-sidebar nav ul li a {
-    color: var(--neon-green);
-    text-decoration: none;
-    font-size: 1em;
-    transition: color 0.3s;
-}
-
-.right-sidebar nav ul li a:hover {
-    color: #57ebde;
-}
-
-.right-sidebar .dropdown-content {
-    display: none;
-    margin-left: 10px;
-    margin-right: 10px;
-    list-style-type: none;
-    padding: 5px 0;
-}
-
-.right-sidebar .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.right-sidebar .dropdown .dropbtn {
-    cursor: pointer;
-}
-
-/* 🌐 Шапка сайту */
+/* Верхнє меню */
 header {
-    position:fixed;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    box-shadow: 0 0 15px var(--neon-green);
-    text-align: center;
+    background: #333;
+    padding: 10px 0;
 }
-
-/* 📜 Навігація */
-nav ul {
+.top-menu ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 0;
 }
-nav ul li {
-    margin: 0 5px;
-    box-shadow: 0 0 10px rgba(0, 255, 212, 0.8), 0 0 20px rgba(0, 255, 212, 0.5); /* Тінь для ефекту */
-    transition: transform 0.3s ease-in-out;
-    border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-weight: 600;
+.top-menu ul li {
+    padding: 0 15px;
 }
-
-nav ul li:hover {
-    transform: scale(1.0.5); /* Логотип збільшується при наведенні */
-}
-
-nav ul li a {
+.top-menu ul li a {
+    color: white;
     text-decoration: none;
-    color: var(--neon-green);
-    font-size: 1.2em;
-    text-transform: uppercase;
-    transition: color 0.3s, text-shadow 0.3s;
+    padding: 10px 15px;
+    display: block;
 }
-nav ul li a:hover {
-    color: #57ebde;
-    text-shadow: 0 0 10px #57ebde;
-}
-
-/* 📜 Навігація з випадаючими списка */
-
-li {
-    margin-top: 3px;
-}
-
-table, th, td {
-    border: 1px solid white;
-}
-
-/* 📌 Футер */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 15px var(--neon-green);
-}
-
-.footer-html {
-    margin-left: 290px;
-    margin-right: 290px;
-    text-align: center;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 15px var(--neon-green);
-}
-
-/* ✨ Анімація плавного завантаження */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* 🏛️ Стилізація таблиці бази даних */
-#dbTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    color: var(--neon-green);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(0, 245, 212, 0.5);
-}
-
-#dbTable th, #dbTable td {
-    padding: 5px;
-    text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#dbTable th {
-    background: rgba(0, 255, 212, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#dbTable tr:hover {
-    background: rgba(0, 255, 212, 0.2);
-    box-shadow: inset 0 0 8px var(--neon-green);
-}
-
-#last {
-    width: 100px;
-}
-
-/* 🔥 Неонові кнопки */
-.btn-edit, .btn-delete {
-    padding: 8px 14px;
-    margin: 2px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s, transform 0.1s, box-shadow 0.2s;
-}
-
-.btn-edit {
-    background: #00b894;
-    color: white;
-    box-shadow: 0 0 10px rgba(0, 245, 212, 0.7);
-}
-
-.btn-edit:hover {
-    background: #00806e;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 245, 212, 1);
-}
-
-.btn-delete {
-    background: #d63031;
-    color: white;
-    box-shadow: 0 0 10px rgba(255, 50, 50, 0.7);
-}
-
-.btn-delete:hover {
-    background: #a91e23;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 50, 50, 1);
-}
-
-/* медіа-запити для кращої роботи на мобільних пристроях */
-@media (max-width: 768px) {
-    main {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .sidebar {
-        display: none; /* або зробіть меню відкриваним через кнопку */
-    }
-    header, footer {
-        text-align: center;
-        padding: 0.5rem;
-    }
-}
-
-/* стилі для елементів у стані фокусу */
-a:focus, button:focus {
-    outline: 2px dashed var(--neon-green);
-    outline-offset: 2px;
-}
-
-/* index.html */
-#greeting {
-    text-align: center;
-    font-size: 1.5em;
-}
-
-
-code {
-    background-color: #fff;
-    color: #002;
+.top-menu ul li a:hover {
+    background: #575757;
     border-radius: 5px;
-    padding: 2px 4px;
 }
-pre code {
-    display: inline-block;
-    border: 1px solid white;
+
+/* Основний контейнер */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Бокове меню */
+.sidebar {
+    width: 250px;
+    background: #222;
+    color: white;
+    padding: 20px;
+    display: none;
+}
+.sidebar ul {
+    list-style: none;
+}
+.sidebar ul li {
     padding: 10px;
 }
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+.sidebar ul li a:hover {
+    background: #575757;
+}
 
-.answer {
-    padding-left: 15px;
+/* Контент */
+.content {
+    flex: 1;
+    padding: 20px;
 }

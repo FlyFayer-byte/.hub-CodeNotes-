@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.hub{CodeNotes}</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div id="logo">.hub{CodeNotes}</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="html.html">HTML</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="js.html">JavaScript</a></li>
+          <li><a href="db.html">Довідник</a></li>
+          <li><a href="code_editor.html">Code Editor</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Бокове ліве меню -->
+    <aside class="left-sidebar">
+        <nav>
+            <ul>
+                <li><a href="#css_basics">Основи CSS</a></li>
+                <li class="dropdown">
+                  <a href="#basic-tags" class="dropbtn"></a>
+                  <ul class="dropdown-content">
+                    <li><a href="#headings"></a></li>
+                    <li><a href="#paragraphs"></a></li>
+                    <li><a href="#links"></a></li>
+                  </ul>
+                </li>
+                <!-- інші пункти -->
+              </ul>
+            </ul>
+        </nav>
+    </aside>
+     <!-- Бокове праве меню -->
+     <aside class="right-sidebar">
+        <nav>
+          <ul>
+            <!-- Можна розмістити додаткову навігацію або корисні посилання -->
+            <li><a href="#resources">Ресурси</a></li>
+            <li><a href="#contact">Контакти</a></li>
+          </ul>
+        </nav>
+    </aside>
+
+    <main class="main-sidebar">
+      <h1>Цей навчальний матеріал створений спільно з <a href="https://chatgpt.com">ChatGPT-4o</a>.</h1>
+      <h2 id="css_basics">Основи CSS</h2>
+      <!--Урок 2: Основи CSS-->
+      <section>
+        <h3>Що таке CSS?</h3>
+        <p><b>CSS (Cascading Style Sheets)</b> – це мова стилів, яка використовується для оформлення веб-сторінок. Вона дозволяє змінювати кольори, шрифти, розміщення елементів та інші візуальні аспекти.</p>
+        <h3>Способи підключення CSS</h3>
+        <p>Існує три способи додавання стилів до HTML:</p>
+        <ol>
+          <li>
+            <b>Вбудований стиль</b> (inline) – стилі прописуються безпосередньо в атрибуті <code>style</code> HTML-елемента.
+          </li>
+            <pre><code>&lt;p style="color: blue; font-size: 20px;"&gt;Цей текст синій і має розмір 20px.&lt;/p&gt;</code></pre>
+          <li>
+            <b>Внутрішній стиль</b> (internal) – стилі розміщуються у тегу <code>&lt;style&gt;</code> в <code>&lt;head&gt;</code>.
+          </li>
+            <pre><code>&lt;head&gt;
+  &lt;style&gt;
+    p {
+      color: green;
+      font-size: 18px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+          <li>
+            <b>Зовнішній стиль</b> (external) – стилі пишуться в окремому файлі <code>.css</code> та підключаються через <code>&lt;link&gt;</code>.
+          </li>
+          <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+</code></pre>
+          <p>Файл <code>styles.css</code>:</p>
+          <pre><code>p {
+  color: red;
+  font-size: 16px;
+}
+</code></pre>
+        </ol>
+        <h3>Основні властивості CSS</h3>
+        <ul>
+          <li>
+            <strong>Колір тексту:</strong> <code>color: red;</code>
+          </li>
+          <li>
+            <strong>Розмір шрифту:</strong> <code>font-size: 20px;</code>
+          </li>
+          <li>
+            <strong>Фон:</strong> <code>background-color: yellow;</code>
+          </li>
+          <li>
+            <strong>Вирівнювання тексту:</strong> <code>text-align: center;</code>
+          </li>
+          <p>
+            <strong>Відступи</strong>:
+            <li><code>margin</code> – це зовнішній відступ (відстань між елементами).</li>
+            <li><code>padding</code> – це внутрішній відступ (відстань між вмістом елемента і його межами).</li>
+          </p>
+          <li>
+            <strong>Ширина та висота:</strong> <code>width</code>, <code>height</code>
+          </li>
+          <li>
+            <strong>Границі:</strong> <code>border: 2px solid black;</code>
+          </li>
+        </ul>
+
+        <p>Тепер перевір свої знання. Дай відповіді на запитання:</p>
+        <h3>Тестування</h3>
+          <details>
+            <summary>Що таке CSS і для чого він використовується?</summary>
+            <p class="answer"><b>CSS</b> – це мова стилів, яка використовується для оформлення веб-сторінок.</p>
+          </details>
+          <details>
+            <summary>Які є три способи підключення CSS до HTML?</summary>
+            <ul>
+              <li>
+                <b>Вбудований стиль</b> (inline) – стилі прописуються безпосередньо в атрибуті <code>style</code> HTML-елемента.
+              </li>
+              <li>
+                <b>Внутрішній стиль</b> (internal) – стилі розміщуються у тегу <code>&lt;style&gt;</code> в <code>&lt;head&gt;</code>.
+              </li>
+              <li><b>Зовнішній стиль</b> (external) – стилі пишуться в окремому файлі <code>.css</code> та підключаються через <code>&lt;link&gt;</code>.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Як змінити колір тексту в CSS? Напиши приклад.</summary>
+            <pre><code>p {
+  color: blue;
+}</code></pre>
+          </details>
+          <details>
+            <summary>Чим відрізняються <code>margin</code> та <code>padding</code>?</summary>
+            <p class="answer">
+              <strong>Відступи:</strong> зовнішній - <code>margin</code>, внутрішній - <code>padding</code>
+            </p>
+          </details>
+          <details>
+            <summary>Як підключити зовнішній файл стилів до HTML? Напиши приклад коду</summary>
+            <p class="answer">
+              <b>Зовнішній стиль</b> (external) – стилі пишуться в окремому файлі <code>.css</code> та підключаються через <code>&lt;link&gt;</code>.
+            </p>
+            <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+</code></pre>
+          </details>
+      </section>
+    </main>
+    
+    <footer class="footer-html">
+      <p>&copy; 2025 .hub{CodeNotes}. Усі права захищені.</p>
+    </footer>
+  </body>
+</html>
