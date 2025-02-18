@@ -1,56 +1,64 @@
-<!DOCTYPE html />
+<!DOCTYPE html>
 <html lang="uk">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hub{CodeNotes}</title>
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Верхнє меню -->
     <header>
-      <nav class="top-menu">
-        
-        <ul>
-          <li><span id="logo">hub{CodeNotes}</span></li>
-          <li><a onclick="loadPage('home.html')">Головна</a></li>
-          <li><a onclick="loadPage('html.html')">HTML</a></li>
-          <li><a onclick="loadPage('css.html')">CSS</a></li>
-          <li><a onclick="loadPage('js.html')">JavaScript</a></li>
-          <li><a onclick="loadPage('sql.html')">SQL</a></li>
-          <li><a onclick="loadPage('codeeditor.html')">CodeEditor</a></li>
-        </ul>
-      </nav>
+        <nav class="top-menu">
+            <ul>
+                <li><span id="logo">hub{CodeNotes}</span></li>
+                <li><a href="#home.html" onclick="loadPage('home.html', event);">Головна</a></li>
+                <li><a href="#html.html" onclick="loadPage('html.html', event);">HTML</a></li>
+                <li><a href="#css.html" onclick="loadPage('css.html', event);">CSS</a></li>
+                <li><a href="#js.html" onclick="loadPage('js.html', event);">JavaScript</a></li>
+                <li><a href="#sql.html" onclick="loadPage('sql.html', event);">SQL</a></li>
+                <li><a href="#codeeditor.html" onclick="loadPage('codeeditor.html', event);">CodeEditor</a></li>
+            </ul>
+        </nav>
     </header>
+
     <!-- Головний контент -->
     <div class="container">
-      <!-- Бокове меню (показується лише для HTML, CSS, JS, SQL) -->
-      <nav id="sidebar" class="sidebar">
-        <!-- Тут буде бокове меню, яке завантажується динамічно -->
-      </nav>
+        <!-- Бокове меню -->
+        <nav id="sidebar" class="sidebar"></nav>
 
-      <!-- Контент -->
-      <main class="content" id="content">
-        
-      </main>
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Викликаємо loadPage для завантаження home.html автоматично при відкритті index.html
-            loadPage('home.html');
+        <!-- Контент -->
+        <main class="content" id="content"></main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let page = location.hash ? location.hash.substring(1) : 'home.html'; // Перевіряємо URL
+            loadPage(page);
+        });
+
+        window.addEventListener("hashchange", function () {
+            let page = location.hash ? location.hash.substring(1) : 'home.html';
+            loadPage(page);
         });
 
         function loadPage(page) {
+            console.log("Завантаження сторінки:", page); // Лог для перевірки
+            if (!page) return; // Якщо сторінка порожня, нічого не робимо
+            location.hash = page; // Оновлюємо URL
             document.getElementById("content").innerHTML = ""; // Очищаємо перед завантаженням
 
             fetch(`pages/${page}`)
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) throw new Error(`Сторінка ${page} не знайдена`);
+                    return response.text();
+                })
                 .then(data => {
                     document.getElementById("content").innerHTML = data;
                 })
                 .catch(error => console.error("Помилка завантаження:", error));
         }
     </script>
-    </div>
-  </body>
+</body>
 </html>

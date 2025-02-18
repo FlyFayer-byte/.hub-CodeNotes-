@@ -5,7 +5,8 @@
 /* Верхнє меню */
 header {
     background: #333;
-    padding: 10px 0;
+    padding: 0;
+    margin: 0;
 }
 .top-menu ul {
     list-style: none;
@@ -50,6 +51,7 @@ header {
 .container {
     display: flex;
     height: 100vh;
+    margin-bottom: 20px;
 }
 code {
     border: 1px solid black;

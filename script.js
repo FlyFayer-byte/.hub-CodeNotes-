@@ -17,17 +17,17 @@ function updateSidebar(page) {
     let sidebar = document.getElementById('sidebar'); // Отримуємо блок бокового меню
 
     // Перевіряємо, яку сторінку було завантажено, і формуємо відповідне бокове меню
-    if (page === 'html.html') {
+    if (page.startsWith('html')) {
         sidebar.innerHTML = `
           <ul>
-            <li><a onclick="loadSubPage('html/intro.html')">Введення в HTML</a></li>
-            <li><a onclick="loadSubPage('html/attributes.html')">HTML Атрибути</a></li>
-            <li><a onclick="loadSubPage('html/styles.html')">HTML Стилі</a></li>
-            <li><a onclick="loadSubPage('html/text-formatting.html')">HTML Форматування</a></li>
-            <li><a onclick="loadSubPage('html/quotation.html')">HTML Цитати</a></li>
-            
+            <li><a href="#html/intro.html" onclick="loadSubPage('html/intro.html', event);">Введення в HTML</a></li>
+            <li><a href="#html/attributes.html" onclick="loadSubPage('html/attributes.html', event);">HTML Атрибути</a></li>
+            <li><a href="#html/styles.html" onclick="loadSubPage('html/styles.html', event);">HTML Стилі</a></li>
+            <li><a href="#html/text-formatting.html" onclick="loadSubPage('html/text-formatting.html', event);">HTML Форматування</a></li>
+            <li><a href="#html/quotation.html" onclick="loadSubPage('html/quotation.html', event);">HTML Цитати</a></li>
+            <li><a href="#html/html-css.html" onclick="loadSubPage('html/html-css.html', event);">HTML CSS</a></li>
             <li>...</li>
-            <li><a onclick="loadSubPage('html/tags.html')">Теги HTML</a></li>
+            <li><a href="#html/tags.html" onclick="loadSubPage('html/tags.html', event)">Теги HTML</a></li>
           </ul>`;
         sidebar.style.display = 'block'; // Відображаємо бокове меню
     } 
