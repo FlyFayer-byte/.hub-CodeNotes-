@@ -1,12 +1,17 @@
 * {
     font-family: 'Courier New', monospace; /* Класичний моноширинний шрифт */
 }
-
+body {
+    margin: 0;
+    padding: 0;
+}
 /* Головне верхнє меню */
 header {
-    background: #333;
-    padding: 0;
+    border: 1px solid red;
     margin: 0;
+}
+.top-menu {
+    background: #333;
 }
 .top-menu ul {
     list-style: none;
@@ -36,15 +41,13 @@ header {
     font-weight: bold;
     color: #00FFD1; /* Неоново-синій колір */
     background: linear-gradient(45deg, #00FFD1, #00BFFF); /* Градієнт */
-    -webkit-background-clip: text; /* Текст з градієнтом */
+    background-clip: text; /* Текст з градієнтом */
     color: transparent; /* Текст прозорий */
     letter-spacing: 2px;
     padding: 5px;
-    margin-bottom: 15px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 255, 212, 0.8), 0 0 20px rgba(0, 255, 212, 0.5); /* Тінь для ефекту */
     transition: transform 0.3s ease-in-out;
-   
 }
 
 /* Основний контейнер */
