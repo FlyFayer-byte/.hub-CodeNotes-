@@ -21,8 +21,11 @@ function updateSidebar(page) {
         sidebar.innerHTML = `
           <ul>
             <li><a onclick="loadSubPage('html/intro.html')">Введення в HTML</a></li>
-            <li><a onclick="loadSubPage('html/attributes.html')">Атрибути HTML</a></li>
-            <li><a onclick="loadSubPage('html/styles.html')">Стилі HTML</a></li>
+            <li><a onclick="loadSubPage('html/attributes.html')">HTML Атрибути</a></li>
+            <li><a onclick="loadSubPage('html/styles.html')">HTML Стилі</a></li>
+            <li><a onclick="loadSubPage('html/text-formatting.html')">HTML Форматування</a></li>
+            <li><a onclick="loadSubPage('html/quotation.html')">HTML Цитати</a></li>
+            
             <li>...</li>
             <li><a onclick="loadSubPage('html/tags.html')">Теги HTML</a></li>
           </ul>`;
