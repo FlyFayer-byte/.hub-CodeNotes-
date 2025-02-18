@@ -31,7 +31,13 @@ function updateSidebar(page) {
           </ul>`;
         sidebar.style.display = 'block'; // Відображаємо бокове меню
     } 
-    else {
+    if (page.startsWith('css')) {
+        sidebar.innerHTML = `
+          <ul>
+            <li><a href="#css/intro.html" onclick="loadSubPage('css/intro.html', event);">Введення в CSS</a></li>  
+          </ul>`
+        sidebar.style.display = 'block'; // Відображаємо бокове меню
+    } else {
         sidebar.innerHTML = ''; // Очищаємо бокове меню, якщо сторінка не передбачає підпунктів
         sidebar.style.display = 'none'; // Ховаємо бокове меню
     }

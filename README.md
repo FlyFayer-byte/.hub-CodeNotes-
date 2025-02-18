@@ -1,13 +1,14 @@
 # .hub-CodeNotes-
-/codenotes
- ├── server.js
- ├── .env
+ /CODENOTES
  ├── /public_html
- │   ├── index.html
- │   ├── htlm.html
+ │   ├── codeeditor.html
  │   ├── css.html
+ │   ├── home.html
  │   ├── js.html
  │   ├── sql.html
  |   ├── 
  │   ├── styles.css
  │   ├── script.js
+ ├── .env
+ ├── backup.json
+ ├── server.js

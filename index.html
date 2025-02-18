@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hub{CodeNotes}</title>
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
-</head>
-<body>
-    <!-- Верхнє меню -->
+  </head>
+  <body>
+    <!-- Головне верхнє меню -->
     <header>
-        <nav class="top-menu">
-            <ul>
-                <li><span id="logo">hub{CodeNotes}</span></li>
-                <li><a href="#home.html" onclick="loadPage('home.html', event);">Головна</a></li>
-                <li><a href="#html.html" onclick="loadPage('html.html', event);">HTML</a></li>
-                <li><a href="#css.html" onclick="loadPage('css.html', event);">CSS</a></li>
-                <li><a href="#js.html" onclick="loadPage('js.html', event);">JavaScript</a></li>
-                <li><a href="#sql.html" onclick="loadPage('sql.html', event);">SQL</a></li>
-                <li><a href="#codeeditor.html" onclick="loadPage('codeeditor.html', event);">CodeEditor</a></li>
-            </ul>
-        </nav>
+      <nav class="top-menu">
+        <ul>
+          <li><span id="logo">hub{CodeNotes}</span></li>
+          <li><a href="#home.html" onclick="loadPage('home.html', event);">Головна</a></li>
+          <li><a href="#html.html" onclick="loadPage('html.html', event);">HTML</a></li>
+          <li><a href="#css.html" onclick="loadPage('css.html', event);">CSS</a></li>
+          <li><a href="#js.html" onclick="loadPage('js.html', event);">JavaScript</a></li>
+          <li><a href="#sql.html" onclick="loadPage('sql.html', event);">SQL</a></li>
+          <li><a href="#codeeditor.html" onclick="loadPage('codeeditor.html', event);">CodeEditor</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Головний контент -->
@@ -60,5 +60,5 @@
                 .catch(error => console.error("Помилка завантаження:", error));
         }
     </script>
-</body>
+  </body>
 </html>
