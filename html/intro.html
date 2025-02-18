@@ -1,0 +1,123 @@
+<h1>Введення в HTML</h1>
+
+<p>HTML є стандартною мовою розмітки для створення веб-сторінок.</p>
+
+<h2>Що таке HTML?</h2>
+
+<ul>
+  <li>HTML означає мову гіпертекстової розмітки</li>
+  <li>HTML є стандартною мовою розмітки для створення веб-сторінок</li>
+  <li>HTML описує структуру веб-сторінки</li>
+  <li>HTML складається з ряду елементів</li>
+  <li>Елементи HTML повідомляють браузеру, як відображати вміст</li>
+  <li>Елементи HTML позначають частини вмісту, наприклад «це заголовок», «це абзац», «це посилання» тощо.</li>
+</ul>
+
+<h2>Простий HTML-документ</h2>
+
+<pre><code>&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>Page Title&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;h1>Заголовок сторінки&lt;/h1>
+    &lt;p>Важлива інформація.&lt;/p>
+  &lt;/body>
+&lt;/html></code></pre>
+
+<h3>Пояснення прикладу</h3>
+
+<ul>
+  <li>Оголошення <code>&lt;!DOCTYPE html&gt;</code> визначає, що цей документ є документом HTML5</li>
+  <li>Елемент <code>&lt;html&gt;</code> є кореневим елементом сторінки HTML</li>
+  <li>Елемент <code>&lt;head&gt;</code> містить метаінформацію про HTML-сторінку</li>
+  <li>Елемент <code>&lt;title&gt;</code> визначає заголовок для сторінки HTML (який відображається в рядку заголовка браузера або на вкладці сторінки)</li>
+  <li>Елемент <code>&lt;body&gt;</code> визначає тіло документа та є контейнером для всього видимого вмісту, такого як заголовки, абзаци, зображення, гіперпосилання, таблиці, списки тощо.</li>
+  <li>Елемент <code>&lt;h1&gt;</code> визначає великий заголовок</li>
+  <li>Елемент <code>&lt;p&gt;</code> визначає абзац</li>
+</ul>
+
+<h2>Структура сторінки HTML</h2>
+
+<p>Усі документи HTML мають починатися з оголошення типу документа: <code>&lt;!DOCTYPE html&gt;</code>.</p>
+
+<p>Сам документ HTML починається з <code>&lt;html&gt;</code> і закінчується на <code>&lt;/html&gt;</code>.</p>
+
+<p>Видима частина документа HTML знаходиться між <code>&lt;body&gt;</code> та <code>&lt;/body&gt;</code>.</p>
+
+<p>Нижче наведено візуалізацію структури HTML-сторінки:</p>
+
+<div style="border: 1px solid black;">
+  &lt;!DOCTYPE html&gt;<br>
+  &lt;html&gt;
+    <div style="border: 1px solid black; margin: 10px;">
+      &lt;head&gt;
+        <div style="border: 1px solid black; margin: 10px;">&lt;title&gt;Назва веб сторінки&lt;/title&gt;</div>
+      &lt;/head&gt;
+    </div>
+    <div style="border: 1px solid black; margin: 10px;">
+      &lt;body&gt;
+        <div style="border: 1px solid black; margin: 10px;">
+            <p>&lt;h1&gt;Заголовок сторінки&lt;/h1&gt;</p>
+            <p>&lt;p&gt;Важлива інформація&lt;/p&gt;</p>
+        </div>
+      &lt;/body&gt;
+    </div>
+  &lt;/html&gt;
+</div>
+
+<h2>Декларація &lt;!DOCTYPE&gt;</h2>
+
+<p>Оголошення &lt;!DOCTYPE&gt; представляє тип документа та допомагає браузерам правильно відображати веб-сторінки.<br>
+Він має з’являтися лише один раз у верхній частині сторінки (перед будь-якими тегами HTML).<br>
+У декларації &lt;!DOCTYPE&gt; не враховується регістр.<br>
+Оголошення &lt;!DOCTYPE&gt; для HTML5 таке:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+
+<h2>Заголовки HTML</h2>
+
+<p>Заголовки HTML визначаються тегами &lt;h1&gt; ... &lt;h6&gt;.<br>
+&lt;h1&gt; визначає найважливіший заголовок, &lt;h6&gt; визначає найменш важливий заголовок:</p>
+
+<details>
+  <summary>Приклад</summary>
+  &lt;h1&gt;Заголовок рівня 1&lt;/h1&gt;<br>
+  &lt;h2&gt;Заголовок рівня 2&lt;/h2&gt;<br>
+  &lt;h3&gt;Заголовок рівня 3&lt;/h3&gt;<br>
+  &lt;h4&gt;Заголовок рівня 4&lt;/h4&gt;<br>
+  &lt;h5&gt;Заголовок рівня 5&lt;/h5&gt;<br>
+  &lt;h6&gt;Заголовок рівня 6&lt;/h6&gt;
+</details>
+
+<h2>Абзаци HTML</h2>
+
+<p>Абзаци HTML визначаються тегом &lt;p&gt;:</p>
+
+<details>
+  <summary>Приклад</summary>
+  &lt;p&gt;Параграф для інфомації.&lt;/p&gt;<br>
+  &lt;p&gt;Інший параграф для інформації.&lt;/p&gt;
+</details>
+
+<h2>Посилання HTML</h2>
+
+<p>HTML-посилання визначаються тегом &lt;a&gt;:</p>
+
+<details>
+  <summary>Приклад</summary>
+  &lt;a href="https://www.w3schools.com"&gt;Посилання на w3schools&lt;a&gt;
+</details>
+
+<p>Пункт призначення посилання вказується в <code>href</code> атрибуті. </p>
+
+<h2>Зображення HTML</h2>
+
+<p>Зображення HTML визначаються тегом &lt;img&gt;.<br>
+Вихідний файл <code>src</code>, альтернативний текст <code>alt</code>, ширина <code>width</code> і висота <code>height</code> надаються як атрибути:</p>
+
+<details>
+    <summary>Приклад</summary>
+    &lt;img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142"&gt;
+</details>

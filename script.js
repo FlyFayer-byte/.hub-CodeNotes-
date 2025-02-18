@@ -19,11 +19,13 @@ function updateSidebar(page) {
     // Перевіряємо, яку сторінку було завантажено, і формуємо відповідне бокове меню
     if (page === 'html.html') {
         sidebar.innerHTML = `
-            <ul>
-                <li><a href="#" onclick="loadSubPage('html/intro.html')">Вступ</a></li>
-                <li><a href="#" onclick="loadSubPage('html/tags.html')">Теги</a></li>
-                <li><a href="#" onclick="loadSubPage('html/forms.html')">Форми</a></li>
-            </ul>`;
+          <ul>
+            <li><a onclick="loadSubPage('html/intro.html')">Введення в HTML</a></li>
+            <li><a onclick="loadSubPage('html/attributes.html')">Атрибути HTML</a></li>
+            <li><a onclick="loadSubPage('html/styles.html')">Стилі HTML</a></li>
+            <li>...</li>
+            <li><a onclick="loadSubPage('html/tags.html')">Теги HTML</a></li>
+          </ul>`;
         sidebar.style.display = 'block'; // Відображаємо бокове меню
     } 
     else {
