@@ -23,8 +23,8 @@ function updateSidebar(page) {
             <li><a href="#html/introduction.html" onclick="loadSubPage('html/introduction.html', event);">Введення в HTML</a></li>
             <li><a href="#html/basic.html" onclick="loadSubPage('html/basic.html', event);">Основи HTML</a></li>
             <li><a href="#html/attributes.html" onclick="loadSubPage('html/attributes.html', event);">HTML Атрибути</a></li>
+            <li><a href="#html/styles.html" onclick="loadSubPage('html/styles.html', event);">HTML Стилі</a></li>
             <!--
-            <li><a href="#html/text-formatting.html" onclick="loadSubPage('html/text-formatting.html', event);">HTML Форматування</a></li>
             <li><a href="#html/quotation.html" onclick="loadSubPage('html/quotation.html', event);">HTML Цитати</a></li>
             <li><a href="#html/html-css.html" onclick="loadSubPage('html/html-css.html', event);">HTML CSS</a></li>
             <li>...</li>
