@@ -2,18 +2,93 @@
 <section>
   <p>У цьому розділі ми розберемо деякі основні приклади HTML.</p>
 
-  <h2>Документи HTML</h2>
-
-  <p>Всі HTML-документи повинні починатися з оголошення типу документа: <code>&lt;!DOCTYPE html></code>.<br>
-  Сам HTML-документ починається з <code>&lt;html></code> і закінчується <code>&lt;/html></code>.<br>
-  Видима частина HTML-документа знаходиться між <code>&lt;body></code> і <code>&lt;/body></code>.</p>
+  <h2>HTML Документи</h2>
+  <p>Всі <b>HTML документи</b> повинні починатися з оголошення типу документа: <code>&lt;!DOCTYPE html></code>.<br>
+  Сам <b>HTML документ</b> починається з <code>&lt;html></code> і закінчується <code>&lt;/html></code>.<br>
+  Видима частина <b>HTML документа</b> знаходиться між <code>&lt;body></code> і <code>&lt;/body></code>.</p>
 
   <h2>HTML Заголовки</h2>
-
-  <p><b>HTML заголовки</b> визначаються за допомогою тегів від <code>&lt;h1></code> до <code>&lt;h6></code>.
-  Тегом <code>&lt;h1></code> визначаються найбільш важливі заголовки. Тегом <code>&lt;h6></code> визначаються найменш важливі заголовки.</p>
+  <p><b>HTML заголовки</b> визначаються за допомогою тегів від <code>&lt;h1></code> до <code>&lt;h6></code>.<br>
+  Тегом <code>&lt;h1></code> визначаються найбільш важливі заголовки.<br>
+  Тегом <code>&lt;h6></code> визначаються найменш важливі заголовки.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <pre><code>
+&lt;h1>Це заголовок 1-го рівня&lt;/h1>
+&lt;h2>Це заголовок 2-го рівня&lt;/h2>
+&lt;h3>Це заголовок 3-го рівня&lt;/h3>
+&lt;h4>Це заголовок 4-го рівня&lt;/h4>
+&lt;h5>Це заголовок 5-го рівня&lt;/h5>
+&lt;h6>Це заголовок 6-го рівня&lt;/h6>
+    </code></pre>
+  </details>
 
   <h2>HTML Параграфи</h2>
+  <p><b>HTML параграфи</b> визначаються за допомогою тега <code>&lt;p></code>.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <pre><code>
+&lt;p>Це перший параграф.&lt;/p>
+&lt;p>Це другий параграф.&lt;/p>
+    </code></pre>
+  </details>
 
-  <p><b>HTML параграфи</b> визначаються за допомогою тега <code>&lt;p></code></p>
+  <h2>HTML Посилання</h2>
+  <p><b>HTML посилання</b> визначаються за допомогою тега <code>&lt;a></code>.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <pre><code>
+&lt;a href="https://hubcodenotes.com/">Це посилання на цей сайт&lt;/a>
+    </code></pre>
+  </details>
+  <p>Призначення посилання вказується в атрибуті <code>href</code>.<br>
+  Атрибути використовуються для надання додаткової інформації про елементи HTML.</p>
+
+  <h2>HTML Зображення</h2>
+  <p><b>HTML зображення</b> визначаються за допомогою тега <code>&lt;img></code>.</p>
+  <p>Початковий файл <code>src</code>, альтернативний текст <code>alt</code>, ширина <code>width</code> і висота <code>height</code> надаються в якості атрибутів.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <pre><code>
+&lt;img src="../images/w3schools.jpg" alt="W3Schools" width="104" height="142"&lt;/p>
+    </code></pre>
+  </details>
+
+  <h2>HTML Кнопки</h2>
+  <p><b>HTML кнопки</b> визначаються за допомогою тега <code>&lt;button></code>.</button></p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <pre><code>
+&lt;button>Натисніть мене&lt;/button>
+    </code></pre>
+  </details>
+
+  <h2>HTML Списки</h2>
+  <p><b>HTML списки</b> визначаються за допомогою тегів <code>&lt;ul></code> (невпорядкований / маркований список) або <code>&lt;ol></code> (упорядкований / нумерований список), з подальшими тегами <code>&lt;li></code> (пункти списку).</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <pre><code>
+&lt;h2>Невпорядкований список HTML&lt;/h2>
+&lt;ul>
+  &lt;li>Перший&lt;/li>
+  &lt;li>Другий&lt;/li>
+  &lt;li>Третій&lt;/li>
+&lt;/ul>
+
+&lt;h2>Впорядкований список HTML&lt;/h2>
+&lt;ol>
+  &lt;li>Перший&lt;/li>
+  &lt;li>Другий&lt;/li>
+  &lt;li>Третій&lt;/li>
+&lt;/ol>
+    </code></pre>
+  </details>
+
+  <p>Детальніше про ці та інші HTML-елементи ви дізнаєтеся в наступних темах цього розділу. Також, ви можете перейти на сайт <a href="https://w3schoolsua.github.io/index.html" target="_blank" rel="noopener noreferrer">W3Schools українською</a>.</p>
 </section>
