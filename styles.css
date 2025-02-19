@@ -53,7 +53,6 @@ header {
 .container {
     display: flex;
     width: 100%;
-    border: 1px solid yellow;
 }
 code {
     border: 1px solid black;
@@ -99,7 +98,6 @@ pre code {
 
 /* Контент */
 .content {
-    border: solid red;
     width: 100%;
     padding: 10px;
 }
