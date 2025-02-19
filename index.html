@@ -8,8 +8,6 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div>
-      <div>
       <!-- Головне верхнє меню -->
       <header>
       <nav class="top-menu">
@@ -25,20 +23,14 @@
         </ul>
       </nav>
       </header>
-      </div>
 
       <!-- Головний контент -->
       <div class="container">
         <!-- Бокове меню -->
-        <div>
-          <nav id="sidebar" class="sidebar"></nav>
-        </div>
+        <nav id="sidebar" class="sidebar"></nav>
         <!-- Контент -->
-        <div>
-          <main class="content" id="content"></main>
-        </div>
+        <main class="content" id="content"></main>
       </div>
-    </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             let page = location.hash ? location.hash.substring(1) : 'home.html'; // Перевіряємо URL
