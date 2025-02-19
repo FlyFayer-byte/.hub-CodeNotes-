@@ -84,13 +84,15 @@ code {
     padding: 0 5;
     background: #333;
     color: aliceblue;
+}*/
+details pre {
+    background-color: #001a1a;
+    color: aliceblue;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0 10px;
 }
-pre code {
-    border: none;
-    background: inherit;
-    color: inherit;
-}
-*/
+
 /* Бокове меню */
 .sidebar {
     width: 250px;
