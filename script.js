@@ -30,11 +30,28 @@ function updateSidebar(page) {
             <li><a href="#html/tags.html" onclick="loadSubPage('html/tags.html', event)">Теги HTML</a></li>
           </ul>`;
         sidebar.style.display = 'block'; // Відображаємо бокове меню
-    } 
-    if (page.startsWith('css')) {
+    } else if (page.startsWith('css')) {
         sidebar.innerHTML = `
           <ul>
             <li><a href="#css/intro.html" onclick="loadSubPage('css/intro.html', event);">Введення в CSS</a></li>  
+          </ul>`
+        sidebar.style.display = 'block'; // Відображаємо бокове меню
+    } else if (page.startsWith('js')) {
+        sidebar.innerHTML = `
+          <ul>
+            <li><a href="#js/intro.html" onclick="loadSubPage('js/intro.html', event);">Введення в JS</a></li>  
+          </ul>`
+        sidebar.style.display = 'block'; // Відображаємо бокове меню
+    } else if (page.startsWith('sql')) {
+        sidebar.innerHTML = `
+          <ul>
+            <li><a href="#sql/intro.html" onclick="loadSubPage('sql/intro.html', event);">Введення в SQL</a></li>  
+          </ul>`
+        sidebar.style.display = 'block'; // Відображаємо бокове меню
+    } else if (page.startsWith('dsa')) {
+        sidebar.innerHTML = `
+          <ul>
+            <li><a href="#dsa/intro.html" onclick="loadSubPage('dsa/intro.html', event);">Введення в DSA</a></li>  
           </ul>`
         sidebar.style.display = 'block'; // Відображаємо бокове меню
     } else {

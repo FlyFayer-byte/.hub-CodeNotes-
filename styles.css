@@ -1,16 +1,10 @@
 * {
     font-family: 'Courier New', monospace; /* Класичний моноширинний шрифт */
-}
-body {
     margin: 0;
     padding: 0;
 }
 /* Головне верхнє меню */
 header {
-    border: 1px solid red;
-    margin: 0;
-}
-.top-menu {
     background: #333;
 }
 .top-menu ul {
@@ -18,14 +12,17 @@ header {
     display: flex;
     justify-content: center;
 }
-.top-menu ul li {
-    padding: 0 15px;
-}
+/* Головне верхнє меню => Кнопки */
 .top-menu ul li a {
     color: white;
+    font-size: 24px;
+    font-weight: 900;
     text-decoration: none;
-    padding: 10px 15px;
     display: block;
+    padding: 5px;
+    margin: 5px 2.5px;
+    border: 1px solid white;
+    border-radius: 5px;
 }
 .top-menu ul li a:hover {
     background: #575757;
@@ -54,7 +51,6 @@ header {
 .container {
     display: flex;
     height: 100vh;
-    margin-bottom: 20px;
 }
 code {
     border: 1px solid black;
@@ -74,7 +70,6 @@ pre code {
     width: 250px;
     background: #222;
     color: white;
-    padding: 20px;
     display: none;
 }
 .sidebar ul {
@@ -83,17 +78,22 @@ pre code {
 .sidebar ul li {
     padding: 10px;
 }
+/* Бокове меню => Кнопки */
 .sidebar ul li a {
     color: white;
     text-decoration: none;
     display: block;
+    padding: 5px 10px;
+    font-weight: 900;
+    border: 1px solid white;
+    border-radius: 5px;
 }
 .sidebar ul li a:hover {
     background: #575757;
+    border-radius: 5px;
 }
 
 /* Контент */
 .content {
-    flex: 1;
-    padding: 20px;
+    padding: 10px;
 }
