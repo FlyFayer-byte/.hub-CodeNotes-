@@ -8,8 +8,10 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <!-- Головне верхнє меню -->
-    <header>
+    <div>
+      <div>
+      <!-- Головне верхнє меню -->
+      <header>
       <nav class="top-menu">
         <ul>
           <!--<li><span id="logo">hub{CodeNotes}</span></li>-->
@@ -22,17 +24,21 @@
           <li><a href="#codeeditor.html" onclick="loadPage('codeeditor.html', event);">CodeEditor</a></li>
         </ul>
       </nav>
-    </header>
+      </header>
+      </div>
 
-    <!-- Головний контент -->
-    <div class="container">
+      <!-- Головний контент -->
+      <div class="container">
         <!-- Бокове меню -->
-        <nav id="sidebar" class="sidebar"></nav>
-
+        <div>
+          <nav id="sidebar" class="sidebar"></nav>
+        </div>
         <!-- Контент -->
-        <main class="content" id="content"></main>
+        <div>
+          <main class="content" id="content"></main>
+        </div>
+      </div>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             let page = location.hash ? location.hash.substring(1) : 'home.html'; // Перевіряємо URL
