@@ -55,6 +55,29 @@ header {
     display: flex;
     width: 100%;
 }
+h1 {
+    text-align: center;
+}
+section h2 {
+    padding-left: 10px;
+}
+section h3 {
+    padding-left: 10px;
+}
+section p {
+    margin: 5px 10px;
+}
+section ul {
+    margin: 5px 10px;
+    margin-left: 25px;
+}
+section details {
+    margin: 5px 10px;
+}
+code {
+    font-weight: 900;
+}
+/*
 code {
     border: 1px solid black;
     border-radius: 5px;
@@ -67,7 +90,7 @@ pre code {
     background: inherit;
     color: inherit;
 }
-
+*/
 /* Бокове меню */
 .sidebar {
     width: 250px;
