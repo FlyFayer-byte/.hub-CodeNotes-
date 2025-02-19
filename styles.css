@@ -16,6 +16,7 @@ header {
 }
 /* Головне верхнє меню => Кнопки */
 .top-menu ul li a {
+    width: 100px;
     color: white;
     font-size: 24px;
     font-weight: 900;
