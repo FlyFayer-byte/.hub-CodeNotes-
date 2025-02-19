@@ -10,6 +10,21 @@
       .top-menu ul li a {
         text-align: center;
       }
+      #toggle-sidebar {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #333;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .sidebar.hidden {
+        transform: translateX(-100%);
+      }
+
     </style>
   </head>
   <body>
@@ -18,6 +33,7 @@
       <nav class="top-menu">
         <ul>
           <!--<li><span id="logo">hub{CodeNotes}</span></li>-->
+          <li><button id="toggle-sidebar">☰ Меню</button></li>
           <li><a href="#home.html" onclick="loadPage('home.html', event);">Головна</a></li>
           <li><a href="#html.html" onclick="loadPage('html.html', event);">HTML</a></li>
           <li><a href="#css.html" onclick="loadPage('css.html', event);">CSS</a></li>

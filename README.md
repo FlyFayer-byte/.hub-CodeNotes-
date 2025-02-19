@@ -12,17 +12,20 @@
  |  |  ├── 
  |  ├──/sql
  |  |  ├── 
+ │  ├── admin.html              # Панель адміністратора
+ │  ├── admin.js                # JavaScript для адмін-панелі
+ │  ├── admin.php               # Серверна частина для збереження контенту
  │  ├── codeeditor.html
  │  ├── css.html
  │  ├── dsa.html
  │  ├── home.html
  │  ├── html.html
- │  ├── index.html
+ │  ├── index.html              # Головна сторінка сайту
  |  ├── js.html
  |  ├── README.md
- │  ├── script.js
+ │  ├── script.js               # Основний JavaScript-код
  │  ├── sql.html
- │  ├── styles.css
+ │  ├── styles.css              # Стилі сайту
  ├── .env
  ├── backup.json
  ├── server.js
