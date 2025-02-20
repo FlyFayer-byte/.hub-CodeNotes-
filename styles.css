@@ -92,7 +92,11 @@ details pre {
     border-radius: 5px;
     padding: 0 10px;
 }
-
+.codeResult {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
 /* Бокове меню */
 .sidebar {
     width: 250px;
