@@ -27,6 +27,8 @@ function updateSidebar(page) {
             <li><a href="#html/text-formatting.html" onclick="loadSubPage('html/text-formatting.html', event);">HTML Форматування</a></li>
             <li><a href="#html/quotations.html" onclick="loadSubPage('html/quotations.html', event);">HTML цитування</a></li>
             <li><a href="#html/colors.html" onclick="loadSubPage('html/colors.html', event);">HTML Кольори</a></li>
+            <li><a href="#html/styles-css.html" onclick="loadSubPage('html/styles-css.html', event);">HTML Стилі CSS</a></li>
+            <li><a href="#html/links.html" onclick="loadSubPage('html/links.html', event);">HTML Посилання</a></li>
           </ul>`;
         sidebar.style.display = 'block'; // Відображаємо бокове меню
     } else if (page.startsWith('css')) {

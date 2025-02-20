@@ -1,0 +1,90 @@
+<h1>HTML Посилання</h1>
+<section>
+  <p>Посилання можна знайти майже на всіх веб-сторінках. Посилання дозволяють користувачам переходити зі сторінки на сторінку.</p>
+
+  <h2>Посилання HTML - Синтаксис</h2>
+  <p>HTML тег <code>&lt;a></code> визначає гіперпосилання. Він має такий синтаксис:</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <pre><code>
+&lt;a href="url">Текст посилання&lt;/a>
+    </code></pre>
+  </details>
+
+  <p>Найважливішим атрибутом елемента <code>&lt;a></code> є атрибут <code>href</code>, який вказує пункт призначення посилання.</p>
+  <p>Текст посилання - це частина, яку буде видно читачеві.</p>    
+  <p>Натиснувши на текст посилання, читач перенаправить за вказаною URL-адресою.</p>
+
+  <p>За умовчанням у всіх браузерах посилання відображатимуться так:</p>
+  <ul>
+    <li>Невідвідане посилання - підкреслене і синім кольором</li>
+    <li>Відвідане посилання - підкреслене і фіолетовим кольором</li>
+    <li>Активне посилання - підкреслене і червоним кольором</li>
+  </ul>
+
+  <p>Ви можете змінити кольори за замовчуванням, використовуючи CSS:</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <pre><code>
+&lt;style>
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+ text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+ text-decoration: underline;
+}
+&lt;/style>
+    </code></pre>
+  </details>
+
+  <p>Посилання часто стилізуються у вигляді кнопок за допомогою CSS:</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <pre><code>
+&lt;style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+&lt;/style>
+    </code></pre>
+  </details>
+  <h2>HTML-посилання – атрибут target</h2>
+  <p>За замовчуванням пов’язана сторінка відображатиметься в поточному вікні браузера. Щоб змінити це, ви повинні вказати іншу ціль для посилання.</p>
+  <p>Цільовий атрибут <code>target</code> вказує, де відкривати пов’язаний документ.</p>
+  <p>Цільовий атрибут <code>target</code> може мати одне з таких значень:</p>
+  <ul>
+    <li><code>_self</code> - за замовчування, відкриває документ у тому самому вікні/вкладці, де його клацнули</li>
+    <li><code>_blank</code> – відкриває документ у новому вікні чи вкладці</li>
+    <li><code>_parent</code> - відкриває документ у батьківському фреймі</li>
+    <li><code>_top</code> - відкриває документ у повному тілі вікна</li>
+  </ul>
+</section>
