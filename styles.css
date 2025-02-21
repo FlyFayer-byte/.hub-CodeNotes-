@@ -97,6 +97,12 @@ details pre {
     border-radius: 5px;
     padding: 10px;
 }
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+}
 /* Бокове меню */
 .sidebar {
     width: 250px;

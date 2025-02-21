@@ -33,6 +33,9 @@ function updateSidebar(page) {
             <li><a href="#html/inline-elements.html" onclick="loadSubPage('html/inline-elements.html', event);">Вбудовані елементи</a></li>
             <li><a href="#html/div-element.html" onclick="loadSubPage('html/div-element.html', event);">Елемент &lt;div&gt;</a></li>
             <li><a href="#html/head-element.html" onclick="loadSubPage('html/head-element.html', event);">Елемент &lt;head&gt; ?</a></li>
+            <li><a href="#html/html-forms.html" onclick="loadSubPage('html/html-forms.html', event);">Елемент &lt;form&gt;</a></li>
+            <li><a href="#html/attributea-forms.html" onclick="loadSubPage('html/attributea-forms.html', event);">Атрибути &lt;form></a></li>
+            <li><a href="#html/elements-forms.html" onclick="loadSubPage('html/elements-forms.html', event);">Елементи &lt;form></a></li>
           </ul>`;
         sidebar.style.display = 'block'; // Відображаємо бокове меню
     } else if (page.startsWith('css')) {

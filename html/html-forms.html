@@ -1,0 +1,160 @@
+<h1>HTML Форми</h1>
+<section>
+  <p>Форма HTML використовується для збору даних, введених користувачем. Введені користувачем дані найчастіше надсилаються на сервер для обробки.</p>
+  <p>Елемент <code>&lt;form></code> є контейнером для різних типів елементів введення, таких як: текстові поля, прапорці, перемикачі, кнопки надсилання тощо.</p>
+  <h2>Елемент <code>&lt;input></code></h2>
+  <p>Елемент HTML <code>&lt;input></code> є найбільш використовуваним елементом форми.</p>
+  <p>Елемент <code>&lt;input></code> можна відобразити різними способами, залежно від атрибута <code>type</code>.</p>
+  
+  <h3>Введення тексту</h3>
+  <p><code>&lt;input type="text"></code> визначає однорядкове поле для введення тексту.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form>
+  &lt;label for="fname">Ім'я:&lt;/label>&lt;br>
+  &lt;input type="text" id="fname" name="fname">&lt;br>
+  &lt;label for="lname">Призвіще:&lt;/label>
+  &lt;input type="text" id="lname" name="lname">
+&lt;/form>
+    </code></pre>
+  </details>
+  <!-- Результат -->
+  <details open>
+    <summary><b>Результат</b></summary>
+    <div class="codeResult">
+      <form>
+        <label for="fname">Ім'я:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Призвіще:</label><br>
+        <input type="text" id="lname" name="lname">
+      </form>  
+    </div>
+  </details>
+
+  <h3>Елемент <code>&lt;label></code></h3>
+  <p>Зверніть увагу на використання елемента <code>&lt;label></code> у прикладі вище.</p>
+  <p>Тег <code>&lt;label></code> визначає мітку для багатьох елементів форми.</p>
+  <p>Елемент <code>&lt;label></code> корисний для користувачів програм зчитування з екрана, оскільки програма зчитування з екрана вголос читатиме мітку, коли користувач фокусується на елементі введення.</p>
+  <p>Елемент <code>&lt;label></code> також допомагає користувачам, яким важко клацати дуже маленькі області (наприклад, перемикачі або прапорці), тому що коли користувач клацає текст в елементі <code>&lt;label></code>, він перемикає перемикач/прапорець.</p>
+  <p>Атрибут <code>for</code> тегу <code>&lt;label></code> має дорівнювати атрибуту <code>id</code> елемента <code>&lt;label></code>, щоб зв’язати їх разом.</p>
+
+  <h3>Радіо кнопка введення</h3>
+  <p>Елемент <code>&lt;input type="radio"></code> визначає перемикач (радіокнопку).</p>
+  <p>Перемикачі дозволяють користувачеві вибрати ОДИН із обмеженої кількості варіантів.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;p>Виберіть улюблену мову Інтернету:&lt;/p>
+
+&lt;form>
+  &lt;input type="radio" id="html" name="fav_language" value="HTML">
+  &lt;label for="html">HTML&lt;/label>&lt;br>
+  &lt;input type="radio" id="css" name="fav_language" value="CSS">
+  &lt;label for="css">CSS&lt;/label>&lt;br>
+  &lt;input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  &lt;label for="javascript">JavaScript&lt;/label>
+&lt;/form>
+    </code></pre>
+  </details>
+  <!-- Результат -->
+  <details open>
+    <summary><b>Результат</b></summary>
+    <div class="codeResult">
+      <p>Виберіть улюблену мову Інтернету:</p>
+      <form>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+      </form>  
+    </div>
+  </details>
+
+  <h3>Прапорці</h3>
+  <p>Елемент <code>&lt;input type="checkbox"></code> визначає прапорець.
+  <p>Прапорці дозволяють користувачеві вибрати НУЛЬ або БІЛЬШЕ варіантів з обмеженої кількості варіантів.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form>
+  &lt;input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  &lt;label for="vehicle1"> У мене є велосипед&lt;/label>&lt;br>
+  &lt;input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  &lt;label for="vehicle2"> У мене є машина&lt;/label>&lt;br>
+  &lt;input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  &lt;label for="vehicle3"> У мене є човен&lt;/label>
+&lt;/form>
+    </code></pre>
+  </details>
+  <!-- Результат -->
+  <details open>
+    <summary><b>Результат</b></summary>
+    <div class="codeResult">
+      <form>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> У мене є велосипед</label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> У мене є машина</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> У мене є човен</label>
+      </form> 
+    </div>
+  </details>
+  
+  <h3>Кнопка Submit / Надіслати</h3>
+  <p>Елемент <code>&lt;input type="submit"></code> визначає кнопку для надсилання даних форми обробнику форми.</p>
+  <p>Обробник форми зазвичай є файлом на сервері зі сценарієм для обробки вхідних даних.</p>
+  <p>Обробник форми вказується в атрибуті <code>action</code>> форми.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form action="/action_page.php">
+&lt;label for="fname">First name:&lt;/label>&lt;br>
+  &lt;input type="text" id="fname" name="fname" value="John">&lt;br>
+  &lt;label for="lname">Last name:&lt;/label>&lt;br>
+  &lt;input type="text" id="lname" name="lname" value="Doe">&lt;br>&lt;br>
+  &lt;input type="submit" value="Submit">
+&lt;/form>
+    </code></pre>
+  </details>
+  <!-- Результат -->
+  <details open>
+    <summary><b>Результат</b></summary>
+    <div class="codeResult">
+      <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+          <input type="text" id="fname" name="fname" value="John"><br>
+          <label for="lname">Last name:</label><br>
+          <input type="text" id="lname" name="lname" value="Doe"><br><br>
+          <input type="submit" value="Submit">
+        </form>
+    </div>
+  </details>
+
+  <h3>Атрибут <code>name</code> для <code>&lt;input></code></h3>
+  <p>Зауважте, що кожне поле введення <code>&lt;input></code> повинно мати атрибут <code>name</code> для надсилання.</p>
+  <p>Якщо атрибут <code>name</code> опущено, значення поля введення <code>&lt;input></code> не надсилатиметься взагалі.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form action="/action_page.php">
+  &lt;label for="fname">First name:&lt;/label>&lt;br>
+  &lt;input type="text" id="fname" value="John">&lt;br>&lt;br>
+  &lt;input type="submit" value="Submit">
+&lt;/form>
+    </code></pre>
+  </details>
+</section>

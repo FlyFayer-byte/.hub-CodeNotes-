@@ -1,0 +1,232 @@
+<h1>HTML Атрибути &lt;form></h1>
+<section>
+  <p>У цій главі описуються різні атрибути для HTML елемента <code>&lt;form></code>.</p>
+  <h2>Атрибут Action</h2>
+  <p>Атрибут <code>action</code> визначає дію, яка буде виконана під час надсилання форми.</p>
+  <p>Зазвичай дані форми надсилаються у файл на сервері, коли користувач натискає кнопку відправки.</p>
+  <p>У наведеному нижче прикладі дані форми надсилаються у файл під назвою <code>«action_page.php»</code>. Цей файл містить серверний сценарій, який обробляє дані форми:</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form action='/action_page.html'>
+  &lt;label for="fname">Ім’я:&lt;/label>&lt;br>
+  &lt;input type="text" id="fname" name="fname" value="John">&lt;br>
+  &lt;label for="lname">Прізвище:&lt;/label>&lt;br>
+  &lt;input type="text" id="lname" name="lname" value="Doe">&lt;br>&lt;br>
+  &lt;input type="submit" value="Відправити">
+&lt;/form>
+    </code></pre>
+  </details>
+  <p><b>Порада:</b> якщо атрибут <code>action</code> пропущено, дію встановлюється для поточної сторінки.</p>
+  
+  <h2>Атрибут <code>target</code></h2>
+  <p>Атрибут <code>target</code> вказує, чи буде надісланий результат відкриватися в <b>новій вкладці</b> браузера, у <b>фреймі</b> або в <b>поточному</b> вікні.</p>
+  <p>За замовчуванням значення <code>_self</code> означає, що форма буде відправлена в поточному вікні.</p>
+  <p>Щоб зробити результат форми відкритим в новій вкладці браузера, використовуйте значення <code>_blank</code>:</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form action='/action_page.html' target='_blank'>
+    </code></pre>
+  </details>
+  <p>Іншими допустимими значеннями є <code>_parent</code>, <code>_top</code> або <code>name</code>, яке представляє ім’я <code>iframe</code>.</p>
+  <p>Атрибут <code>target</code> може мати одне з наступних значень:</p>
+  <table>
+    <tbody><tr>
+      <th>Значення</th>
+      <th>Опис</th>
+    </tr>
+    <tr>
+      <td>_blank</td>
+      <td>Відповідь відображається в новому вікні або вкладці</td>
+    </tr>
+    <tr>
+      <td>_self</td>
+      <td>Відповідь відображається в поточному вікні</td>
+    </tr>
+    <tr>
+      <td>_parent</td>
+      <td>Відповідь відображається в батьківському фреймі</td>
+    </tr>
+    <tr>
+      <td>_top</td>
+      <td>Відповідь відображається в усьому вікні</td>
+    </tr>
+    <tr>
+      <td><i>framename</i></td>
+      <td>Відповідь відображається у вказаному фреймі</td>
+    </tr>
+  </tbody></table>
+
+  <h2>Атрибут method</h2>
+  <p>Атрибут <code>method</code> вказує метод HTTP (<b>GET</b> або <b>POST</b>), який буде використовуватись при надсиланні даних форми</p>
+  <p>Дані форми можуть бути відправлені як змінні URL (з <code>method="get"</code>) або як HTTP post транзакція (з <code>method="post"</code>).</p>
+  <p>Метод HTTP за замовчуванням при надсиланні даних форми - <b>GET</b>.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form action='/action_page.html' method='get'>
+&lt;form action='/action_page.html' method='post'>
+    </code></pre>
+  </details>
+
+  <h3>Коли використовувати метод <b>GET</b>?</h3>
+  <p>Метод за замовчуванням при надсиланні даних форми - <b>GET</b>.</p>
+  <p>Однак при використанні GET відправлені дані форми будуть <b>видимі в полі адреси сторінки</b> (адресному рядку):</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+/action_page.html?firstname=Mickey&lastname=Mouse
+    </code></pre>
+  </details>
+  <p><b>Примітка по GET:</b></p>
+  <ul>
+    <li>Додає дані в формі надсилання до URL-адреси в парах ім’я/значення</li>
+    <li>Довжина URL-адреси обмежена (близько 3000 символів)</li>
+    <li>Ніколи не використовуйте GET для надсилання конфіденційних даних! (Буде відображатися в URL-адресі)</li>
+    <li>Корисно для подачі форм, де користувач хоче зробити закладку результату</li>
+    <li>GET є найкращим варіантом для незахищених даних, наприклад рядків запитів в Google</li>
+  </ul>
+
+  <h3>Коли використовувати метод <b>POST</b>?</h3>
+  <p>Завжди використовуйте <b>POST</b>, якщо дані форми містять конфіденційну або особисту інформацію. Метод <b>POST</b> не відображає відправлені дані форми в адресному рядку сторінки.</p>
+  <p><b>Примітка по POST:</b></p>
+  <ul>
+    <li>POST не має обмежень за розмірами і може використовуватися для надсилання великих обсягів даних</li>
+    <li>Надіслані з POST форми можна додати в закладки</li>
+  </ul>
+
+  <h2>Атрибут автозаповнення</h2>
+  <p>Атрибут <code>autocomplete</code> визначає, чи має бути увімкнено або вимкнено автозаповнення у формі.</p>
+  <p>Коли автозаповнення ввімкнено, браузер автоматично доповнює значення на основі значень, які користувач ввів раніше.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form action="/action_page.php" autocomplete="on">
+    </code></pre>
+  </details>
+
+  <h2>Атрибут Novalidate</h2>
+  <p>Атрибут <code>novalidate</code> є булевим атрибутом.</p>
+  <p>Якщо він присутній, він визначає, що дані форми (вхідні дані) не повинні перевірятися під час надсилання.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form action="/action_page.php" novalidate>
+    </code></pre>
+  </details>
+
+  <h2>Атрибут name</h2>
+  <p>Кожне поле вводу повинно мати атрибут <code>name</code> для надсилання.</p>
+  <p>Якщо атрибут <code>name</code> опущений, дані його поля вводу не будуть відправлені взагалі.</p>
+  <p>Цей приклад буде відправляти тільки поле вводу "Last name" (Прізвище):</p>
+    <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form action='/action_page.html'>
+  First name:&lt;br>
+  &lt;input type='text' value='Mickey'>&lt;br>
+  Last name:&lt;br>
+  &lt;input type='text' name='lastname' value='Mouse'>&lt;br>&lt;br>
+  &lt;input type='submit' value='Надіслати'>
+&lt;/form>
+    </code></pre>
+  </details>
+
+  <h2>Групування даних форми за допомогою &lt;fieldset></h2>
+  <p>Елемент <code>&lt;fieldset></code> використовується для групування пов’язаних даних у формі.</p>
+  <p>Елемент <code>&lt;legend></code> визначає заголовок для елемента <code>&lt;fieldset></code>.</p>
+    <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;form action='/action_page.html'>
+  &lt;fieldset>
+    &lt;legend>Особиста інформація:&lt;/legend>
+      Ім’я:&lt;br>
+      &lt;input type='text' name='firstname' value='Mickey'>&lt;br>
+      Прізвище:&lt;br>
+      &lt;input type='text' name='lastname' value='Mouse'>&lt;br>&lt;br>
+      &lt;input type='submit' value='Надіслати'>
+  &lt;/fieldset>
+&lt;/form>
+    </code></pre>
+  </details>
+  <!-- Результат -->
+  <details open>
+    <summary><b>Результат</b></summary>
+    <div class="codeResult">
+      <form action='/action_page.html'>
+        <fieldset>
+          <legend>Особиста інформація:</legend>
+          Ім’я:<br>
+          <input type='text' name='firstname' value='Mickey'><br>
+          Прізвище:<br>
+          <input type='text' name='lastname' value='Mouse'><br><br>
+          <input type='submit' value='Надіслати'>
+        </fieldset>
+      </form>
+    </div>
+  </details>
+  <p>Список всіх атрибутів <code>&lt;form></code>:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Атрибут</th>
+        <th>Опис</th>
+      </tr>
+      <tr>
+        <td>accept-charset</td>
+        <td>Вказує набір символів, що використовується у відправленої формі (за замовчуванням: набір символів сторінки).</td>
+      </tr>
+      <tr>
+        <td>action</td>
+        <td>Вказує адресу (url), куди відправити форму (за замовчуванням: сторінка відправки).</td>
+      </tr>
+      <tr>
+        <td>autocomplete</td>
+        <td>Вказує, чи повинен браузер автоматично заповнювати форму (за замовчуванням: включено).</td>
+      </tr>
+      <tr>
+        <td>enctype</td>
+        <td>Визначає кодування відправлених даних (за замовчуванням: url-encoded).</td>
+      </tr>
+      <tr>
+        <td>method</td>
+        <td>Вказує метод HTTP, який використовується під час відправки форми (за замовчуванням: GET).</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>Вказує назву, яка використовується для ідентифікації форми (для використання DOM: document.forms.name).</td>
+      </tr>
+      <tr>
+        <td>novalidate</td>
+       <td>Вказує, що браузер не повинен перевіряти форму.</td>
+      </tr>
+      <tr>
+        <td>rel</td>
+       <td>Визначає зв'язок між пов'язаним ресурсом і поточним документ.</td>
+      </tr>
+      <tr>
+        <td>target</td>
+        <td>Вказує ціль адреси в атрибуті action (за замовчуванням: _self).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Для отримання повного списку всіх доступних HTML тегів відвідайте <a href="https://w3schoolsua.github.io/tags/index.html" target="_blank" rel="noopener noreferrer">HTML Довідник тегів</a> на сайті <a href="https://w3schoolsua.github.io/index.html" target="_blank" rel="noopener noreferrer">W3Schools українською</a>.</p>
+</section>
