@@ -100,6 +100,7 @@
   </details>
   <!-- Результат -->
   <details open>
+    <summary><b>Результат</b></summary>
     <label for="cars">Choose a car:</label>
     <div class="codeResult">
     <select id="cars" name="cars" size="3">
@@ -128,6 +129,7 @@
   </details>
   <!-- Результат -->
   <details open>
+    <summary><b>Результат</b></summary>  
   <div class="codeResult">
   <label for="cars">Choose a car:
     <select id="cars" name="cars" size="4" multiple>
@@ -155,7 +157,8 @@
   </details>
   <!-- Результат -->
   <details open>
-  <div class="codeResult">
+    <summary><b>Результат</b></summary>
+    <div class="codeResult">
     <textarea name="message" rows="10" cols="30">
       The cat was playing in the garden.
     </textarea>
@@ -171,4 +174,196 @@
   The cat was playing in the garden.
 &lt;/textarea>
         </code></pre>
+    </details>
+
+  <h2>Елемент &lt;button></h2>
+  <p>Елемент <code>&lt;button></code> визначає клікабельну кнопку:</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code>
+&lt;button type="button" onclick="alert('Слава Україні!')">Тицни мене!&lt;/button>
+    </code></pre>
+  </details>
+  <!-- Результат -->
+  <details open>
+    <summary><b>Результат</b></summary>
+  <div class="codeResult">
+    <button type="button" onclick="alert('Слава Україні!')">Тицни мене!</button>
+    </div>
+  </details>
+  <p><b>Примітка</b>. Завжди вказуйте атрибут <code>type</code> для елемента кнопки. Різні браузери можуть використовувати різні типи за замовчуванням для елемента кнопки.</p>
+
+  <h2>Елементи &lt;fieldset> і &lt;legend></h2>
+  <p>Елемент <code>&lt;fieldset></code> використовується для групування пов’язаних даних у формі.</p>
+  <p>Елемент <code>&lt;legend></code> визначає заголовок для елемента <code>&lt;fieldset></code>.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code> <!-- Початок коду приклада -->
+&lt;form action="/action_page.php">
+  &lt;fieldset>
+  &lt;legend>Personalia:&lt;/legend>
+  &lt;label for="fname">First name:&lt;/label>&lt;br>
+  &lt;input type="text" id="fname" name="fname" value="John">&lt;br>
+  &lt;label for="lname">Last name&lt;/label>&lt;br>
+  &lt;input type="text" id="lname" name="lname" value="Doe">&lt;br>&lt;br>
+  &lt;input type="submit" value="Submit">
+  &lt;/fieldset>
+&lt;/form>
+    </code></pre> <!-- Кінець коду приклада -->
+  </details>
+  <!-- Результат -->
+  <details open>
+    <summary><b>Результат</b></summary>
+    <div class="codeResult"> <!-- Рамка для відображення результату -->
+    <form action="/action_page.php">
+        <fieldset>
+        <legend>Personalia:</legend>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+    </div> <!-- Рамка для відображення результату -->
+  </details>
+  
+  <h2>Елемент &lt;datalist></h2>
+  <p>Елемент <code>&lt;datalist></code> визначає список попередньо визначених параметрів для елемента <code>&lt;input></code>.</p>
+  <p>Під час введення даних користувачі бачитимуть розкривний список із попередньо визначеними параметрами.</p>
+  <p>Атрибут <code>&lt;list></code> елемента <code>&lt;input></code> має посилатися на атрибут <code>id</code> елемента <code>&lt;datalist></code>.</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code> <!-- Початок коду приклада -->
+&lt;form action="/action_page.php">
+  &lt;input list="browsers">
+  &lt;datalist id="browsers">
+    &lt;option value="Edge">
+    &lt;option value="Firefox">
+    &lt;option value="Chrome">
+    &lt;option value="Opera">
+    &lt;option value="Safari">
+&lt;/datalist>
+&lt;/form>
+    </code></pre> <!-- Кінець коду приклада -->
+  </details>
+  <!-- Результат -->
+  <details open>
+    <summary><b>Результат</b></summary>
+    <div class="codeResult"> <!-- Рамка для відображення результату -->
+      <form action="/action_page.php">
+        <input list="browsers">
+        <datalist id="browsers">
+          <option value="Edge">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+      </form>
+    </div> <!-- Рамка для відображення результату -->
+  </details>
+
+  <h2>Елемент &lt;output></h2>
+  <p>Елемент <code>&lt;output></code> представляє результат обчислення (як обчислення, виконаного сценарієм).</p>
+  <p>Виконайте обчислення та покажіть результат в елементі <code>&lt;output></code>:</p>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад</b></summary>
+    <b>HTML</b>
+    <pre><code> <!-- Початок коду приклада -->
+&lt;form action="/action_page.php"
+  oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  &lt;input type="range" id="a" name="a" value="50">
+  100 +
+  &lt;input type="number" id="b" name="b" value="50">
+  =
+  &lt;output name="x" for="a b">&lt;/output>
+  &lt;br>&lt;br>
+  &lt;input type="submit">
+&lt;/form>
+    </code></pre> <!-- Кінець коду приклада -->
+  </details>
+  <!-- Результат -->
+  <details open>
+    <summary><b>Результат</b></summary>
+    <div class="codeResult"> <!-- Рамка для відображення результату -->
+      <form action="/action_page.php"
+        oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        0
+        <input type="range" id="a" name="a" value="50">
+        100 +
+        <input type="number" id="b" name="b" value="50">
+        =
+        <output name="x" for="a b"></output>
+        <br><br>
+        <input type="submit">
+      </form>
+    </div> <!-- Рамка для відображення результату -->
+  </details>
+
+  <h3>Елементи форми HTML</h3>
+  <table>
+    <tbody>
+      <tr>
+        <th>Tag</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>&lt;form&gt;</td>
+        <td>Визначає HTML-форму для введення користувача</td>
+      </tr>
+      <tr>
+        <td>&lt;input&gt;</td>
+        <td>Визначає елемент керування введенням</td>
+      </tr>
+      <tr>
+        <td>&lt;textarea&gt;</td>
+        <td>Визначає багаторядковий елемент керування введенням (текстова область)</td>
+      </tr>
+      <tr>
+        <td>&lt;label&gt;</td>
+        <td>Визначає мітку для елемента &lt;input&gt;</td>
+      </tr>
+      <tr>
+        <td>&lt;fieldset&gt;</td>
+        <td>Групує пов’язані елементи у формі</td>
+      </tr>
+      <tr>
+        <td>&lt;legend&gt;</td>
+        <td>Визначає заголовок для елемента &lt;fieldset&gt;</td>
+      </tr>
+      <tr>
+        <td>&lt;select&gt;</td>
+        <td>Визначає розкривний список</td>
+      </tr>
+      <tr>
+        <td>&lt;optgroup&gt;</td>
+        <td>Визначає групу пов’язаних параметрів у розкривному списку</td>
+      </tr>
+      <tr>
+        <td>&lt;option&gt;</td>
+        <td>Визначає параметр у розкривному списку</td>
+      </tr>
+      <tr>
+        <td>&lt;button&gt;</td>
+        <td>Визначає кнопку, яку можна натиснути</td>
+      </tr>
+      <tr>
+        <td>&lt;datalist&gt;</td>
+        <td>Визначає список попередньо визначених параметрів для елементів керування введенням</td>
+      </tr>
+      <tr>
+        <td>&lt;output&gt;</td>
+        <td>Визначає результат обчислення</td>
+      </tr>
+    </tbody>
+  </table>
 </section>

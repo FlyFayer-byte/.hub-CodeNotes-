@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <title>Canvas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>HTML Графіка Canvas</h1>
+    <section>
+      <p>Елемент HTML <code>&lt;canvas></code> використовується для малювання графіки на веб-сторінці.</p>
+      <img src="../html/media/htmlCanvasGraphics.png" alt="HTML Canvas Graphics">
+      <p>Графіка вище, створена за допомогою <code>&lt;canvas></code>. Він показує чотири елементи: червоний прямокутник, градієнтний прямокутник, багатоколірний прямокутник і багатоколірний текст.</p>
+      
+      <h2>Що таке HTML Canvas?</h2>
+      <p>HTML Елемент <code>&lt;canvas></code> використовується для малювання графіки на льоту за допомогою JavaScript.</p>
+      <p>Елемент <code>&lt;canvas></code> є лише контейнером для графіки. Ви повинні використовувати JavaScript, щоб фактично намалювати графіку.</p>
+      <p><b>Canvas</b> має кілька методів малювання контурів, прямокутників, кіл, тексту та додавання зображень.</p>
+      <p><b>Canvas</b> підтримується всіма основними браузерами.</p>
+      
+      <h2>Приклади Canvas</h2>
+      <p><b>Canvas</b> — це прямокутна область на HTML сторінці. За замовчуванням полотно не має рамок і вмісту.</p>
+        
+      <!-- Приклад коду -->
+      <details open>
+        <summary><b>Розмітка виглядає так:</b></summary>
+        <b>HTML</b>
+        <pre><code> <!-- Початок коду приклада -->
+  &lt;canvas id="myCanvas" width="200" height="100" style="border: 1px solid black;">&lt;/canvas>
+        </code></pre> <!-- Кінець коду приклада -->
+      </details>
+      <!-- Результат -->
+      <details open>
+        <summary><b>Результат</b></summary>
+        <div class="codeResult"> <!-- Рамка для відображення результату -->
+          <canvas id="myCanvas" width="200" height="100" style="border: 1px solid black;">Canvas</canvas>
+        </div> <!-- Рамка для відображення результату -->
+      </details>
+        
+      <p><b>Примітка</b>. Завжди вказуйте атрибут <code>id</code> (на який потрібно посилатися в сценарії), а також атрибути <code>width</code> і <code>height</code> для визначення розміру полотна. Щоб додати рамку, використовуйте атрибут <code>style</code>.</p>
+      
+      <h2>Додайте JavaScript</h2>
+      <p>Після створення прямокутної області полотна ви повинні додати JavaScript, щоб виконати малюнок.</p>
+      <!-- Приклад коду -->
+      <details open>
+        <summary><b>Розмітка виглядає так:</b></summary>
+        <b>HTML</b>
+        <pre><code> <!-- Початок коду приклада -->
+  &lt;canvas id="draw-line" width="200" height="100">&lt;/canvas>
+  &lt;script>
+    var c = document.getElementById("draw-line");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+  &lt;/script>
+        </code></pre> <!-- Кінець коду приклада -->
+      </details>
+      <!-- Результат з використанням JS-->
+        <b>Результат</b><br>
+        <canvas id="draw-line" width="200" height="100"></canvas>
+
+    </section>
+    <script>
+      var c = document.getElementById("draw-line");
+      var ctx = c.getContext("2d");
+      ctx.moveTo(0, 0);
+      ctx.lineTo(200, 100);
+      ctx.stroke();
+    </script>
+  </body>
+</html>
