@@ -39,7 +39,7 @@ function updateSidebar(page) {
             <li><a href="#html/input-types.html" onclick="loadSubPage('html/input-types.html', event);">Типи &lt;input></a></li>
             <li><a href="#html/input-attributes.html" onclick="loadSubPage('html/input-attributes.html', event);">Атрибути &lt;input></a></li>
             <li><a href="#html/form-attributes.html" onclick="loadSubPage('html/form-attributes.html', event);">Атрибути &lt;form></a></li>
-            <li><a href="#html/html-canvas.html" onclick="loadSubPage('html/html-canvas.html', event);">HTML Canvas</a></li>
+            <li><a href="#html/html-canvas.html" onclick="loadSubPage('html/html-canvas.html', event);">HTML Canvas + JS</a></li>
             
           </ul>`;
         sidebar.style.display = 'block'; // Відображаємо бокове меню
@@ -92,3 +92,76 @@ function loadSubPage(subPage, event = null) {
 document.getElementById('toggle-sidebar').addEventListener('click', function () {
   document.getElementById('sidebar').classList.toggle('hidden');
 });
+
+// Функції для html/html-canvas.html
+// Оголошення функції drawLine - Намалювати лінію
+function drawLine() {
+  var c = document.getElementById("draw-line");
+  var ctx = c.getContext("2d");
+  ctx.moveTo(0, 0);
+  ctx.lineTo(200, 100);
+  ctx.stroke();
+}
+
+// Оголошення функції drawLine - Намалювати коло
+function drawCircle() {
+  var c = document.getElementById("draw-circle");
+  var ctx = c.getContext("2d");
+  ctx.beginPath();
+  ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+  ctx.stroke();
+}
+
+// Оголошення функції drawText - Намалюйте текст
+function drawText() {
+  var c = document.getElementById("draw-text");
+  var ctx = c.getContext("2d");
+  ctx.font = "30px Arial";
+  ctx.fillText("Hello World", 10, 50);
+}
+
+// Оголошення функції strokeText - Обведення тексту
+function strokeText() {
+  var c = document.getElementById("stroke-text");
+  var ctx = c.getContext("2d");
+  ctx.font = "30px Arial";
+  ctx.strokeText("Hello World", 10, 50);
+}
+
+// Оголошення функції DrawLinearGradient - Малювання лінійного градієнта
+function DrawLinearGradient () {
+  var c = document.getElementById("draw-linear-gradient");
+  var ctx = c.getContext("2d");
+
+  // Create gradient
+  var grd = ctx.createLinearGradient(0, 0, 200, 0);
+  grd.addColorStop(0, "red");
+  grd.addColorStop(1, "white");
+
+  // Fill with gradient
+  ctx.fillStyle = grd;
+  ctx.fillRect(10, 10, 150, 80);
+}
+
+// Оголошення функції DrawCircularGradient - Малювання кругового градієнта
+function DrawCircularGradient() {
+  var c = document.getElementById("draw-circular-gradient");
+  var ctx = c.getContext("2d");
+
+  // Create gradient
+  var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+  grd.addColorStop(0, "red");
+  grd.addColorStop(1, "white");
+
+  // Fill with gradient
+  ctx.fillStyle = grd;
+  ctx.fillRect(10, 10, 150, 80);
+}
+
+// Оголошення функції DrawCircularGradient - Малювання зображення
+function drawImage() {
+  var c = document.getElementById("draw-image");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("scream");
+  ctx.drawImage(img, 10, 10);
+}

@@ -1,76 +1,226 @@
-<!DOCTYPE html>
-<html lang="uk">
-  <head>
-    <title>Canvas</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <h1>HTML Графіка Canvas</h1>
-    <section>
-      <p>Елемент HTML <code>&lt;canvas></code> використовується для малювання графіки на веб-сторінці.</p>
-      <img src="../html/media/htmlCanvasGraphics.png" alt="HTML Canvas Graphics">
-      <p>Графіка вище, створена за допомогою <code>&lt;canvas></code>. Він показує чотири елементи: червоний прямокутник, градієнтний прямокутник, багатоколірний прямокутник і багатоколірний текст.</p>
+<h1>HTML Графіка Canvas</h1>
+  <section>
+    <p>Елемент HTML <code>&lt;canvas></code> використовується для малювання графіки на веб-сторінці.</p>
+    <img src="../html/media/htmlCanvasGraphics.png" alt="HTML Canvas Graphics">
+    <p>Графіка вище, створена за допомогою <code>&lt;canvas></code>. Він показує чотири елементи: червоний прямокутник, градієнтний прямокутник, багатоколірний прямокутник і багатоколірний текст.</p>
       
-      <h2>Що таке HTML Canvas?</h2>
-      <p>HTML Елемент <code>&lt;canvas></code> використовується для малювання графіки на льоту за допомогою JavaScript.</p>
-      <p>Елемент <code>&lt;canvas></code> є лише контейнером для графіки. Ви повинні використовувати JavaScript, щоб фактично намалювати графіку.</p>
-      <p><b>Canvas</b> має кілька методів малювання контурів, прямокутників, кіл, тексту та додавання зображень.</p>
-      <p><b>Canvas</b> підтримується всіма основними браузерами.</p>
+    <h2>Що таке HTML Canvas?</h2>
+    <p>HTML Елемент <code>&lt;canvas></code> використовується для малювання графіки на льоту за допомогою JavaScript.</p>
+    <p>Елемент <code>&lt;canvas></code> є лише контейнером для графіки. Ви повинні використовувати JavaScript, щоб фактично намалювати графіку.</p>
+    <p><b>Canvas</b> має кілька методів малювання контурів, прямокутників, кіл, тексту та додавання зображень.</p>
+    <p><b>Canvas</b> підтримується всіма основними браузерами.</p>
       
-      <h2>Приклади Canvas</h2>
-      <p><b>Canvas</b> — це прямокутна область на HTML сторінці. За замовчуванням полотно не має рамок і вмісту.</p>
+    <h2>Приклади Canvas</h2>
+    <p><b>Canvas</b> — це прямокутна область на HTML сторінці. За замовчуванням полотно не має рамок і вмісту.</p>
         
-      <!-- Приклад коду -->
-      <details open>
-        <summary><b>Розмітка виглядає так:</b></summary>
-        <b>HTML</b>
-        <pre><code> <!-- Початок коду приклада -->
+    <!-- Приклад коду -->
+    <details open>
+      <summary><b>Розмітка виглядає так:</b></summary>
+      <b>HTML</b>
+      <pre><code> <!-- Початок коду приклада -->
   &lt;canvas id="myCanvas" width="200" height="100" style="border: 1px solid black;">&lt;/canvas>
-        </code></pre> <!-- Кінець коду приклада -->
-      </details>
-      <!-- Результат -->
-      <details open>
-        <summary><b>Результат</b></summary>
-        <div class="codeResult"> <!-- Рамка для відображення результату -->
-          <canvas id="myCanvas" width="200" height="100" style="border: 1px solid black;">Canvas</canvas>
-        </div> <!-- Рамка для відображення результату -->
-      </details>
+      </code></pre> <!-- Кінець коду приклада -->
+    </details>
+    <!-- Результат -->
+    <details open>
+      <summary><b>Результат</b></summary>
+      <div class="codeResult"> <!-- Рамка для відображення результату -->
+        <canvas id="myCanvas" width="200" height="100" style="border: 1px solid black;">Canvas</canvas>
+      </div> <!-- Рамка для відображення результату -->
+    </details>
         
-      <p><b>Примітка</b>. Завжди вказуйте атрибут <code>id</code> (на який потрібно посилатися в сценарії), а також атрибути <code>width</code> і <code>height</code> для визначення розміру полотна. Щоб додати рамку, використовуйте атрибут <code>style</code>.</p>
+    <p><b>Примітка</b>. Завжди вказуйте атрибут <code>id</code> (на який потрібно посилатися в сценарії), а також атрибути <code>width</code> і <code>height</code> для визначення розміру полотна. Щоб додати рамку, використовуйте атрибут <code>style</code>.</p>
       
-      <h2>Додайте JavaScript</h2>
-      <p>Після створення прямокутної області полотна ви повинні додати JavaScript, щоб виконати малюнок.</p>
-      <!-- Приклад коду -->
-      <details open>
-        <summary><b>Розмітка виглядає так:</b></summary>
-        <b>HTML</b>
-        <pre><code> <!-- Початок коду приклада -->
-  &lt;canvas id="draw-line" width="200" height="100">&lt;/canvas>
-  &lt;script>
-    var c = document.getElementById("draw-line");
-    console.log("Element found: ", c); // Перевірка елемента
-    var ctx = c.getContext("2d");
-    console.log("Context obtained: ", ctx); // Перевірка контексту
-    ctx.moveTo(0, 0);
-    ctx.lineTo(200, 100);
-    ctx.stroke();
-  &lt;/script>
-        </code></pre> <!-- Кінець коду приклада -->
-      </details>
-      <!-- Результат з використанням JS-->
-        <b>Результат</b><br>
-        <canvas id="draw-line" width="200" height="100"></canvas>
+    <h2>Додайте JavaScript</h2>
+    <p>Після створення прямокутної області полотна ви повинні додати JavaScript, щоб виконати малюнок. Нижче наведено декілька прикладів:</p>
+    <!-- Приклад коду -->
+    <details open>
+      <summary><b>Намалюйте лінію:</b></summary>
+      <b>HTML</b>
+      <pre><code> <!-- Початок коду приклада -->
+&lt;canvas id="draw-line" width="200" height="100" style="border: 1px solid black;">&lt;/canvas>
+&lt;script>
+  var c = document.getElementById("draw-line");
+  var ctx = c.getContext("2d");
+  ctx.moveTo(0, 0);
+  ctx.lineTo(200, 100);
+  ctx.stroke();
+&lt;/script>
+      </code></pre> <!-- Кінець коду приклада -->
+    </details>
+    <!-- Результат -->
+    <details open>
+      <summary><b>Результат</b></summary>
+      <div class="codeResult"> <!-- Рамка для відображення результату -->
+        <canvas id="draw-line" width="200" height="100" style="border: 1px solid black;"></canvas><br>
+        <button type="button" onclick="drawLine()">Намалювати лінію</button>
+      </div> <!-- Рамка для відображення результату -->
+    </details>
 
-    </section>
-    <script>
-var c = document.getElementById("draw-line");
-console.log("Element found: ", c); // Перевірка елемента
-var ctx = c.getContext("2d");
-console.log("Context obtained: ", ctx); // Перевірка контексту
-ctx.moveTo(0, 0);
-ctx.lineTo(200, 100);
-ctx.stroke();
-    </script>
-  </body>
-</html>
+    <!-- Приклад коду -->
+    <details open>
+      <summary><b>Намалюйте коло:</b></summary>
+      <b>HTML</b>
+      <pre><code> <!-- Початок коду приклада -->
+&lt;canvas id="draw-circle" width="200" height="100" style="border: 1px solid black;">&lt;/canvas>
+&lt;script>
+  var c = document.getElementById("draw-circle");
+  var ctx = c.getContext("2d");
+  ctx.beginPath();
+  ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+  ctx.stroke();
+&lt;/script>
+      </code></pre> <!-- Кінець коду приклада -->
+    </details>
+    <!-- Результат -->
+    <details open>
+      <summary><b>Результат</b></summary>
+      <div class="codeResult"> <!-- Рамка для відображення результату -->
+        <canvas id="draw-circle" width="200" height="100" style="border: 1px solid black;"></canvas><br>
+        <button type="button" onclick="drawCircle()">Намалювати коло</button>
+      </div> <!-- Рамка для відображення результату -->
+    </details>
+
+        <!-- Приклад коду -->
+        <details open>
+          <summary><b>Намалюйте текст:</b></summary>
+          <b>HTML</b>
+          <pre><code> <!-- Початок коду приклада -->
+&lt;canvas id="draw-text" width="200" height="100" style="border: 1px solid black;">&lt;/canvas>
+&lt;script>
+  var c = document.getElementById("draw-text");
+  var ctx = c.getContext("2d");
+  ctx.font = "30px Arial";
+  ctx.fillText("Hello World", 10, 50);
+&lt;/script>
+          </code></pre> <!-- Кінець коду приклада -->
+        </details>
+        <!-- Результат -->
+        <details open>
+          <summary><b>Результат</b></summary>
+          <div class="codeResult"> <!-- Рамка для відображення результату -->
+            <canvas id="draw-text" width="200" height="100" style="border: 1px solid black;"></canvas><br>
+            <button type="button" onclick="drawText()">Намалюйте текст</button>
+          </div> <!-- Рамка для відображення результату -->
+        </details>
+
+        <!-- Приклад коду -->
+        <details open>
+          <summary><b>Обведення тексту:</b></summary>
+          <b>HTML</b>
+          <pre><code> <!-- Початок коду приклада -->
+&lt;canvas id="stroke-text" width="200" height="100" style="border: 1px solid black;">&lt;/canvas>
+&lt;script>
+  var c = document.getElementById("stroke-text");
+  var ctx = c.getContext("2d");
+  ctx.font = "30px Arial";
+  ctx.strokeText("Hello World", 10, 50);
+&lt;/script>
+          </code></pre> <!-- Кінець коду приклада -->
+        </details>
+        <!-- Результат -->
+        <details open>
+          <summary><b>Результат</b></summary>
+          <div class="codeResult"> <!-- Рамка для відображення результату -->
+            <canvas id="stroke-text" width="200" height="100" style="border: 1px solid black;"></canvas><br>
+            <button type="button" onclick="strokeText()">Намалюйте текст</button>
+          </div> <!-- Рамка для відображення результату -->
+        </details>
+
+        <!-- Приклад коду -->
+        <details open>
+          <summary><b>Малювання лінійного градієнта:</b></summary>
+          <b>HTML</b>
+          <pre><code> <!-- Початок коду приклада -->
+&lt;canvas id="draw-linear-gradient" width="200" height="100" style="border: 1px solid black;">&lt;/canvas>
+&lt;script>
+  var c = document.getElementById("draw-linear-gradient");
+  var ctx = c.getContext("2d");
+
+  // Create gradient
+  var grd = ctx.createLinearGradient(0, 0, 200, 0);
+  grd.addColorStop(0, "red");
+  grd.addColorStop(1, "white");
+
+  // Fill with gradient
+  ctx.fillStyle = grd;
+  ctx.fillRect(10, 10, 150, 80);
+&lt;/script>
+          </code></pre> <!-- Кінець коду приклада -->
+        </details>
+        <!-- Результат -->
+        <details open>
+          <summary><b>Результат</b></summary>
+          <div class="codeResult"> <!-- Рамка для відображення результату -->
+            <canvas id="draw-linear-gradient" width="200" height="100" style="border: 1px solid black;"></canvas><br>
+            <button type="button" onclick="DrawLinearGradient()">Намалюйте лінійний градієнт</button>
+          </div> <!-- Рамка для відображення результату -->
+        </details>
+
+                <!-- Приклад коду -->
+        <details open>
+          <summary><b>Малювання кругового градієнта:</b></summary>
+          <b>HTML</b>
+          <pre><code> <!-- Початок коду приклада -->
+&lt;canvas id="draw-circular-gradient" width="200" height="100" style="border: 1px solid black;">&lt;/canvas>
+&lt;script>
+  var c = document.getElementById("draw-circular-gradient");
+  var ctx = c.getContext("2d");
+
+  // Create gradient
+  var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+  grd.addColorStop(0, "red");
+  grd.addColorStop(1, "white");
+
+  // Fill with gradient
+  ctx.fillStyle = grd;
+  ctx.fillRect(10, 10, 150, 80);
+&lt;/script>
+          </code></pre> <!-- Кінець коду приклада -->
+        </details>
+        <!-- Результат -->
+        <details open>
+          <summary><b>Результат</b></summary>
+          <div class="codeResult"> <!-- Рамка для відображення результату -->
+            <canvas id="draw-circular-gradient" width="200" height="100" style="border: 1px solid black;"></canvas><br>
+            <button type="button" onclick="DrawCircularGradient()">Намалюйте круговий градієнт</button>
+          </div> <!-- Рамка для відображення результату -->
+        </details>
+
+        <!-- Приклад коду -->
+        <details open>
+          <summary><b>Малювання зображення:</b></summary>
+          <b>HTML</b>
+          <pre><code> <!-- Початок коду приклада -->
+&lt;p>Image to use:&lt;/p>
+&lt;img id="scream" src="../html/media/img_the_scream.jpg" alt="The Scream" width="220" height="277">
+&lt;p>Canvas to fill:&lt;/p>
+&lt;canvas id="draw-image" width="250" height="300" style="border:1px solid #d3d3d3;"></canvas>
+
+
+&lt;canvas id="draw-image" width="200" height="100" style="border: 1px solid black;">&lt;/canvas>
+&lt;script>
+  var c = document.getElementById("draw-image");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("scream");
+  ctx.drawImage(img, 10, 10);
+&lt;/script>
+          </code></pre> <!-- Кінець коду приклада -->
+        </details>
+        <!-- Результат -->
+        <details open>
+          <summary><b>Результат</b></summary>
+          <div class="codeResult"> <!-- Рамка для відображення результату -->
+            <p>Image to use:</p>
+            <img id="scream" src="../html/media/img_the_scream.jpg" alt="The Scream" width="220" height="277">
+
+            <p>Canvas to fill:</p>
+            <canvas id="draw-image" width="250" height="300" style="border:1px solid #d3d3d3;"></canvas><br>
+
+            <button type="button" onclick="drawImage()">Намалюйте зображення</button>
+          </div> <!-- Рамка для відображення результату -->
+        </details>
+
+  <h2>Навчальний посібник із HTML Canvas</h2>
+  <p>Щоб дізнатися більше про <code>&lt;canvas></code>, прочитайте <a href="https://www.w3schools.com/graphics/canvas_intro.asp" target="_blank" rel="noopener noreferrer">підручник із HTML Canvas.</a></p>
+  </section>
