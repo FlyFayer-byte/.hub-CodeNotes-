@@ -40,7 +40,7 @@ function updateSidebar(page) {
             <li><a href="#html/input-attributes.html" onclick="loadSubPage('html/input-attributes.html', event);">Атрибути &lt;input></a></li>
             <li><a href="#html/form-attributes.html" onclick="loadSubPage('html/form-attributes.html', event);">Атрибути &lt;form></a></li>
             <li><a href="#html/html-canvas.html" onclick="loadSubPage('html/html-canvas.html', event);">HTML Canvas + JS</a></li>
-            
+            <li><a href="#html/svg-graphics.html" onclick="loadSubPage('html/svg-graphics.html', event);">HTML SVG Графіка</a></li>
           </ul>`;
         sidebar.style.display = 'block'; // Відображаємо бокове меню
     } else if (page.startsWith('css')) {

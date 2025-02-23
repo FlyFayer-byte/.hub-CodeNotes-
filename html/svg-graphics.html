@@ -1,0 +1,181 @@
+<h1>HTML Графіка SVG</h1>
+<section>
+  <h2>SVG (масштабована векторна графіка)</h2>
+  <p>SVG визначає векторну графіку в XML, яку можна безпосередньо вставляти в сторінки HTML.</p>
+  <p>Графіка SVG є масштабованою та не втрачає якості, якщо її масштабувати або змінювати:</p>
+  <p>SVG підтримується всіма основними браузерами.</p>
+
+  <h2>Що таке SVG?</h2>
+  <ul>
+    <li>SVG розшифровується як Scalable Vector Graphics - Масштабована векторна графіка</li>
+    <li>SVG використовується для визначення векторної графіки для Інтернету</li>
+    <li>SVG визначає графіку у форматі XML</li>
+    <li>Кожен елемент і атрибут у файлах SVG можна анімувати</li>
+    <li>SVG інтегрується з іншими стандартами, такими як CSS, DOM, XSL і JavaScript</li>
+  </ul>
+
+  <h2>HTML елемент &lt;svg></h2>
+  <p>Елемент HTML <code>&lt;svg></code>> є контейнером для графіки SVG.</p>
+  <p>SVG має кілька методів для малювання контурів, прямокутників, кіл, багатокутників, тексту та багато іншого.</p>
+
+  <h2>Коло SVG</h2>
+  <!-- Приклад коду -->
+  <details open>
+    <summary><b>Приклад:</b></summary>
+    <b>HTML</b>
+    <pre><code> <!-- Початок коду приклада -->
+&lt;svg width="100" height="100">
+  &lt;circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+&lt;/svg>
+    </code></pre> <!-- Кінець коду приклада -->
+  </details>
+    <!-- Результат -->
+    <details open>
+      <summary><b>Результат</b></summary>
+      <div class="codeResult"> <!-- Рамка для відображення результату -->
+        <svg width="100" height="100">
+          <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        </svg>
+      </div> <!-- Рамка для відображення результату -->
+    </details>
+
+    <h2>Прямокутник SVG</h2>
+    <!-- Приклад коду -->
+    <details open>
+      <summary><b>Приклад:</b></summary>
+      <b>HTML</b>
+      <pre><code> <!-- Початок коду приклада -->
+&lt;svg width="400" height="120">
+  &lt;rect x="10" y="10" width="200" height="100" stroke="red" stroke-width="6" fill="blue" />
+&lt;/svg>
+      </code></pre> <!-- Кінець коду приклада -->
+    </details>
+      <!-- Результат -->
+      <details open>
+        <summary><b>Результат</b></summary>
+        <div class="codeResult"> <!-- Рамка для відображення результату -->
+          <svg width="400" height="120">
+            <rect x="10" y="10" width="200" height="100" stroke="red" stroke-width="6" fill="blue" />
+          </svg>
+        </div> <!-- Рамка для відображення результату -->
+      </details>
+
+    <h2>Прямокутник SVG із непрозорістю та закругленими кутами</h2>
+    <!-- Приклад коду -->
+    <details open>
+      <summary><b>Приклад:</b></summary>
+      <b>HTML</b>
+      <pre><code> <!-- Початок коду приклада -->
+&lt;svg width="400" height="180">
+  &lt;rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+  style="fill:red; stroke:black; stroke-width:5; opacity:0.5" />
+&lt;/svg>
+      </code></pre> <!-- Кінець коду приклада -->
+    </details>
+      <!-- Результат -->
+      <details open>
+        <summary><b>Результат</b></summary>
+        <div class="codeResult"> <!-- Рамка для відображення результату -->
+          <svg width="400" height="180">
+            <rect x="50" y="20" rx="20" ry="20" width="150" height="150" style="fill:red; stroke:black; stroke-width:5; opacity:0.5" />
+          </svg>
+        </div> <!-- Рамка для відображення результату -->
+      </details>
+
+    <h2>Зірка SVG</h2>
+    <!-- Приклад коду -->
+    <details open>
+      <summary><b>Приклад:</b></summary>
+      <b>HTML</b>
+      <pre><code> <!-- Початок коду приклада -->
+&lt;svg width="300" height="200">
+  &lt;polygon points="100,10 40,198 190,78 10,78 160,198"
+  style="fill:lime; stroke:purple; stroke-width:5; fill-rule:evenodd;" />
+&lt;/svg>
+      </code></pre> <!-- Кінець коду приклада -->
+    </details>
+      <!-- Результат -->
+      <details open>
+        <summary><b>Результат</b></summary>
+        <div class="codeResult"> <!-- Рамка для відображення результату -->
+          <svg width="300" height="200">
+            <polygon points="100,10 40,198 190,78 10,78 160,198"
+            style="fill:lime; stroke:purple; stroke-width:5; fill-rule:evenodd;" />
+          </svg>
+        </div> <!-- Рамка для відображення результату -->
+      </details>
+
+    <h2>SVG градієнтний еліпс і текст</h2>
+    <!-- Приклад коду -->
+    <details open>
+      <summary><b>Приклад:</b></summary>
+      <b>HTML</b>
+      <pre><code> <!-- Початок коду приклада -->
+&lt;svg height="130" width="500">
+  &lt;defs>
+    &lt;linearGradient id="grad1">
+      &lt;stop offset="0%" stop-color="yellow" />
+      &lt;stop offset="100%" stop-color="red" />
+    &lt;/linearGradient>
+  &lt;/defs>
+  &lt;ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  &lt;text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG&lt;/text>
+  Sorry, your browser does not support inline SVG.
+&lt;/svg>
+      </code></pre> <!-- Кінець коду приклада -->
+    </details>
+      <!-- Результат -->
+      <details open>
+        <summary><b>Результат</b></summary>
+        <div class="codeResult"> <!-- Рамка для відображення результату -->
+          <svg height="130" width="500">
+            <defs>
+              <linearGradient id="grad1">
+                <stop offset="0%" stop-color="yellow" />
+                <stop offset="100%" stop-color="red" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+            <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+            Sorry, your browser does not support inline SVG.
+          </svg>
+        </div> <!-- Рамка для відображення результату -->
+      </details>
+
+    <h2>Відмінності між SVG і Canvas</h2>
+    <p>SVG — це мова для опису 2D-графіки в XML, тоді як Canvas малює 2D-графіку на льоту (за допомогою JavaScript).</p>
+    <p>SVG базується на XML, що означає, що кожен елемент доступний у SVG DOM. Ви можете приєднати обробники подій JavaScript до графіки SVG.</p>
+    <p>У SVG кожна намальована фігура запам’ятовується як об’єкт. Якщо атрибути об’єкта SVG змінено, браузер може автоматично повторно відобразити форму.</p>
+    <p>Полотно відтворюється піксель за пікселем. У Canvas, як тільки графіка намальована, вона забувається браузером. Якщо його положення потрібно змінити, необхідно перемалювати всю сцену, включаючи будь-які об’єкти, які могли бути покриті графікою.</p>
+
+    <h2>Порівняння SVG і Canvas</h2>
+    <p>У таблиці нижче показано деякі важливі відмінності між Canvas і SVG:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="width:50%">Canvas</th>
+          <th style="width:50%">SVG</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+                <li>Залежить від роздільної здатності</li>
+                <li>Немає підтримки обробників подій</li>
+                <li>Низькі можливості відображення тексту</li>
+                <li>Ви можете зберегти отримане зображення як .png або .jpg</li>
+                <li>Добре підходить для графічних інтенсивних ігор</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+                <li>Не залежить від роздільної здатності</li>
+                <li>Підтримка обробників подій</li>
+                <li>Найкраще підходить для програм з великими областями рендерингу (Карти Google)</li>
+                <li>Повільний рендеринг, якщо комплекс (все, що використовує DOM) буде дуже повільним</li>
+                <li>Не підходить для ігрових програм</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</section>
