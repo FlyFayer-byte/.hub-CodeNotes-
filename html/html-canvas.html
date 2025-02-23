@@ -49,7 +49,9 @@
   &lt;canvas id="draw-line" width="200" height="100">&lt;/canvas>
   &lt;script>
     var c = document.getElementById("draw-line");
+    console.log("Element found: ", c); // Перевірка елемента
     var ctx = c.getContext("2d");
+    console.log("Context obtained: ", ctx); // Перевірка контексту
     ctx.moveTo(0, 0);
     ctx.lineTo(200, 100);
     ctx.stroke();
@@ -62,11 +64,13 @@
 
     </section>
     <script>
-      var c = document.getElementById("draw-line");
-      var ctx = c.getContext("2d");
-      ctx.moveTo(0, 0);
-      ctx.lineTo(200, 100);
-      ctx.stroke();
+var c = document.getElementById("draw-line");
+console.log("Element found: ", c); // Перевірка елемента
+var ctx = c.getContext("2d");
+console.log("Context obtained: ", ctx); // Перевірка контексту
+ctx.moveTo(0, 0);
+ctx.lineTo(200, 100);
+ctx.stroke();
     </script>
   </body>
 </html>
