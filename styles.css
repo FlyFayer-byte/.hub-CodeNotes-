@@ -71,6 +71,10 @@ section ul {
     margin: 5px 10px;
     margin-left: 25px;
 }
+section ol {
+    margin: 5px 10px;
+    margin-left: 45px;
+}
 section details {
     margin: 5px 10px;
 }

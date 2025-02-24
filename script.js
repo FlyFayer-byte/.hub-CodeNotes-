@@ -46,7 +46,10 @@ function updateSidebar(page) {
     } else if (page.startsWith('css')) {
         sidebar.innerHTML = `
           <ul>
-            <li><a href="#css/intro.html" onclick="loadSubPage('css/intro.html', event);">Введення в CSS</a></li>  
+            <li><a href="#css/introduction.html" onclick="loadSubPage('css/introduction.html', event);">Введення в CSS</a></li>
+            <li><a href="#css/syntax-css.html" onclick="loadSubPage('css/syntax-css.html', event);">CSS Синтаксис</a></li>
+            <li><a href="#css/selectors-css.html" onclick="loadSubPage('css/selectors-css.html', event);">CSS Селектори</a></li>
+            <li><a href="#css/connection-css.html" onclick="loadSubPage('css/connection-css.html', event);">Підключення CSS</a></li>
           </ul>`
         sidebar.style.display = 'block'; // Відображаємо бокове меню
     } else if (page.startsWith('js')) {
