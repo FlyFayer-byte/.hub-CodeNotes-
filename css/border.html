@@ -1,0 +1,146 @@
+<h1>CSS Межі border</h1>
+<section>
+    <p>CSS властивості <code>border</code> дозволяють вказати стиль, ширину і колір межі елемента.</p>
+    <h2>Стиль CSS Межі</h2>
+    <p>Властивість <code>border-style</code> визначає, яку межу відображати.</p>
+    <p>Допускаються наступні значення:</p>
+    <ul>
+        <li><code>dotted</code> - Визначає крапкову межу.</li>
+        <li><code>dashed</code> - Визначає пунктирну межу.</li>
+        <li><code>solid</code> - Визначає суцільну межу.</li>
+        <li><code>double</code> - Визначає подвійну межу.</li>
+        <li><code>groove</code> - Визначає тримірну рифлену межу. Ефект залежить від значення кольору межі.</li>
+        <li><code>ridge</code> - Визначає тримірну ребристу межу. Ефект залежить від значення кольору межі.</li>
+        <li><code>inset</code> - Визначає внутрішню тримірну межу. Ефект залежить від значення кольору межі.</li>
+        <li><code>outset</code> - Визначає зовнішню тримірну межу. Ефект залежить від значення кольору межі.</li>
+        <li><code>none</code> - Не визначає межі.</li>
+        <li><code>hidden</code> - Визначає приховану межу.</li>
+    </ul>
+    <p>Властивість <code>border-style</code> може мати від одного до чотирьох значень (для верхньої межі, правої межі, нижньої межі та лівої межі).</p>
+    <!-- Приклад коду -->
+    <details open>
+        <summary><b>Приклад:</b></summary>
+        <b>CSS</b>
+        <p>Демонстрація різних стилів меж:</p>
+        <pre><code> <!-- Початок коду приклада -->
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}
+        </code></pre> <!-- Кінець коду приклада -->
+    </details>
+
+    <div>
+        <p style="border-style: dotted;">p.dotted {border-style: dotted;}</p>
+        <p style="border-style: dashed;">p.dashed {border-style: dashed;}</p>
+        <p style="border-style: solid">p.solid {border-style: solid;}</p>
+        <p style="border-style: double">p.double {border-style: double;}</p>
+        <p style="border-style: groove">p.groove {border-style: groove;}</p>
+        <p style="border-style: ridge">p.ridge {border-style: ridge;}</p>
+        <p style="border-style: inset;">p.inset {border-style: inset;}</p>
+        <p style="border-style: outset;">p.outset {border-style: outset;}</p>
+        <p style="border-style: none;">p.none {border-style: none;}</p>
+        <p style="border-style: hidden">p.hidden {border-style: hidden;}</p>
+        <p style="border-style: dotted dashed solid double">p.mix {border-style: dotted dashed solid double;}</p>
+    </div>
+    <p>Всі властивості CSS меж</p>
+    <table>
+        <tbody>
+            <tr>
+                <th style="width:25%">Властивість</th>
+                <th>Опис</th>
+            </tr>
+            <tr>
+                <td>border</td>
+                <td><b>Встановлює всі властивості межі в одній об’яві</b></td>
+            </tr>
+            <tr>
+                <td>border-bottom</td>
+                <td>Встановлює всі властивості нижньої межі в одній об’яві</td>
+            </tr>
+            <tr>
+                <td>border-bottom-color</td>
+                <td>Встановлює колір нижньої межі</td>
+            </tr>
+            <tr>
+                <td>border-bottom-style</td>
+                <td>Встановлює стиль нижньої межі</td>
+            </tr>
+            <tr>
+                <td>border-bottom-width</td>
+                <td>Встановлює ширину нижньої межі</td>
+            </tr>
+            <tr>
+                <td>border-color</td>
+                <td><b>Встановлює колір чотирьох меж</b></td>
+            </tr>
+            <tr>
+                <td>border-left</td>
+                <td>Встановлює всі властивості лівої межі в одній об’яві</td>
+            </tr>
+            <tr>
+                <td>border-left-color</td>
+                <td>Встановлює колір лівої межі</td>
+            </tr>
+            <tr>
+                <td>border-left-style</td>
+                <td>Встановлює стиль лівої межі</td>
+            </tr>
+            <tr>
+                <td>border-left-width</td>
+                <td>Встановлює ширину лівої межі</td>
+            </tr>
+            <tr>
+                <td>border-radius</td>
+                <td><b>Встановлює всі чотири властивості border-*-radius для закруглених кутів</b></td>
+            </tr>
+            <tr>
+                <td>border-right</td>
+                <td>Встановлює всі властивості правої межі в одній об’яві</td>
+            </tr>
+            <tr>
+                <td>border-right-color</td>
+                <td>Встановлює колір правої межі</td>
+            </tr>
+            <tr>
+                <td>border-right-style</td>
+                <td>Встановлює стиль правої межі</td>
+            </tr>
+            <tr>
+                <td>border-right-width</td>
+                <td>Встановлює ширину правої межі</td>
+            </tr>
+            <tr>
+                <td>border-style</td>
+                <td><b>Встановлює стиль чотирьох меж</b></td>
+            </tr>
+            <tr>
+                <td>border-top</td>
+                <td>Встановлює всі властивості верхньої межі в одній об’яві</td>
+            </tr>
+            <tr>
+                <td>border-top-color</td>
+                <td>Встановлює колір верхньої межі</td>
+            </tr>
+            <tr>
+                <td>border-top-style</td>
+                <td>Встановлює стиль верхньої межі</td>
+            </tr>
+            <tr>
+                <td>border-top-width</td>
+                <td>Встановлює ширину верхньої межі</td>
+            </tr>
+            <tr>
+                <td>border-width</td>
+                <td><b>Встановлює ширину чотирьох меж</b></td>
+            </tr>
+        </tbody>
+    </table>
+</section>

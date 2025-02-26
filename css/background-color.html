@@ -1,0 +1,310 @@
+<h1>CSS Фони Background</h1>
+<section>
+    <p>CSS властивості фону <code>background</code> використовуються для додавання фонових ефектів для елементів.</p>
+    <p>У цих розділах ви дізнаєтеся про такі CSS властивості фону:</p>
+    <ul>
+        <li><code>background-color</code></li>
+        <li><code>background-image</code></li>
+        <li><code>background-repeat</code></li>
+        <li><code>background-attachment</code></li>
+        <li><code>background-position</code></li>
+        <li><code>background</code> (скорочена властивість)</li>
+    </ul>
+
+    <h2>CSS background-color - Колір фону</h2>
+    <section>
+        <p>Властивість <code>background-color</code> визначає колір фону елемента.</p>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <p>Колір фону сторінки встановлюється так:</p>
+            <pre><code> <!-- Початок коду приклада -->
+body {
+  background-color: lightblue;
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+        <p>У CSS, колір найчастіше визначається як:</p>
+        <ul>
+            <li>дійсна назва кольору, наприклад <co;or>"red"</co></li>
+            <li>шістнадцяткове значення, наприклад <color>"#ff0000"</color></li>
+            <li>значення RGB, наприклад <code>"rgb(255,0,0)"</code></li>
+        </ul>
+
+        <h3>Інші елементи</h3>
+        <p>Ви можете встановити колір фону для будь-яких елементів HTML:</p>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <p>Тут елементи <code>&lt;h1></code>, <code>&lt;p></code> і <code>&lt;div></code> матимуть різні фонові кольори:</p>
+            <pre><code> <!-- Початок коду приклада -->
+h1 {
+  background-color: green;
+}
+p {
+  background-color: lightblue;
+}
+div {
+  background-color: yellow;
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+    </section>
+
+    <h3>Opacity / Transparency - Непрозорість / Прозорість</h3>
+    <section>
+        <p>Властивість <code>opacity</code> визначає непрозорість/прозорість елемента. Він може приймати значення від 0.0 до 1.0. Чим менше значення, тим прозоріше:</p>
+        <div style="display: grid; grid-template-columns: 25% 25% 25% 25%; height: 200px; text-align: center; margin-left: 10px; margin-right: 10px;">
+            <div style="background-color: green; opacity: 1;">opacity 1</div>
+            <div style="background-color: green; opacity: 0.6;">opacity 0.6</div>
+            <div style="background-color: green; opacity: 0.3;">opacity 0.3</div>
+            <div style="background-color: green; opacity: 0.1;">opacity 0.1</div>
+        </div>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <pre><code> <!-- Початок коду приклада -->
+div {
+  background-color: green;
+  opacity: 0.3;
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+        <p><b>Примітка</b>. У разі використання властивості <code>opacity</code> для додавання прозорості фону елемента, всі його дочірні елементи успадковують однакову прозорість. Це може ускладнити читання тексту всередині повністю прозорого елемента.</p>
+    </section>
+
+    <h3>Прозорість з використанням RGBA</h3>
+    <section>
+        <p>Якщо ви не хочете застосовувати непрозорість до дочірніх елементів, як у нашому прикладі вище, використовуйте значення кольорів <code>RGBA</code>. У наступному прикладі встановлюється непрозорість для кольору фону, а не тексту:</p>
+        <div style="display: grid; grid-template-columns: 25% 25% 25% 25%; height: 200px; text-align: center; margin-left: 10px; margin-right: 10px;">
+            <div style="background: rgba(0,128,0,1.0">100% opacity</div>
+            <div style="background: rgba(0,128,0,0.6)">60% opacity</div>
+            <div style="background: rgba(0,128,0,0.3)">30% opacity</div>
+            <div style="background: rgba(0,128,0,0.1)">10% opacity</div>
+        </div>
+        
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <pre><code> <!-- Початок коду приклада -->
+div {
+  background: rgba(0, 128, 0, 0.3) /* Green background with 30% opacity */
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+    </section>
+
+    <h2>CSS Background Image - Фонове зображення</h2>
+    <section>
+        <p>Властивість <code>background-image</code> визначає зображення для використання в якості фону елемента.</p>
+        <p>За замовчуванням зображення повторюється, тому воно покриває весь елемент.</p>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <p>Установіть фонове зображення для сторінки:</p>
+            <pre><code> <!-- Початок коду приклада -->
+body {
+  background-image: url("paper.gif");
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+
+        <p>Фонове зображення також можна встановити для визначених елементів, таких як елемент <code>&lt;p></code> (для окремого параграфу):</p>
+
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <p>У цьому прикладі показано невдале поєднання тексту та фонового зображення. Текст важко читається:</p>
+            <pre><code> <!-- Початок коду приклада -->
+p {
+  background-image: url("paper.gif");
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+    </section>
+
+    <h2>CSS Background Repeat - Повторення фону</h2>
+    <section>
+        <h3>CSS background-repeat</h3>
+        <p>За замовчуванням властивість <code>background-image</code> повторює зображення як горизонтально, так і вертикально.</p>
+        <p>Деякі зображення слід повторювати тільки по горизонталі або вертикалі, інакше вони можуть виглядати дивно</p>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <pre><code> <!-- Початок коду приклада -->
+body {
+  background-image: url("../images/gradient_bg.png");
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+        <p>Якщо зображення повторюється тільки по горизонталі <code>background-repeat: repeat-x;</code>, фон буде виглядати краще</p>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <pre><code> <!-- Початок коду приклада -->
+body {
+  background-image: url("../images/gradient_bg.png");
+  background-repeat: repeat-x;
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+        <p><b>Порада</b>: Щоб повторити зображення по вертикалі, встановіть <code>background-repeat: repeat-y;</code></p>
+
+        <h3>CSS background-repeat: no-repeat</h3>
+        <p>Відображення фонового зображення тільки один раз також визначається властивістю <code>background-repeat</code>:</p>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <p>Показати фонове зображення тільки один раз:</p>
+            <pre><code> <!-- Початок коду приклада -->
+body {
+  background-image: url("../images/img_tree.png");
+  background-repeat: no-repeat;
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+
+        <h3>CSS background-position</h3>
+        <p>Властивість <code>background-position</code> використовується для вказування положення (позиції) фонового зображення.</p>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <p>Розмістіть фонове зображення в правому верхньому куті:</p>
+            <pre><code> <!-- Початок коду приклада -->
+body {
+ background-image: url("../images/img_tree.png");
+ background-repeat: no-repeat;
+ background-position: right top;
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+    </section>
+
+    <h2>CSS Background Attachment - Прикріплення фону</h2>
+    <section>
+        <h3>CSS background-attachment</h3>
+        <p>Властивість <code>background-attachment</code> визначає, чи повинно фонове зображення прокручуватись або фіксуватися (не буде прокручуватись разом з іншою частиною сторінки):</p>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <p>У цьому прикладі фонове зображення буде фіксованим:</p>
+            <pre><code> <!-- Початок коду приклада -->
+body {
+  background-image: url("../images/img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <p>У цьому прикладі фонове зображення має прокручуватись разом з іншою частиною сторінки:</p>
+            <pre><code> <!-- Початок коду приклада -->
+body {
+  background-image: url("../images/img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: scroll;
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+    </section>
+
+    <h2>CSS Background Shorthand - Скорочена властивість</h2>
+    <section>
+        <p>Щоб скоротити код, також можна вказати всі властивості фону в одній єдиній властивості. Вона називається скороченою властивістю.</p>
+        <p>Замість того, щоб писати:</p>
+        <!-- Приклад коду -->
+        <details open>
+            <summary><b>Приклад:</b></summary>
+            <b>CSS</b>
+            <pre><code> <!-- Початок коду приклада -->
+body {
+  background-color: #fff;
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+ background-position: right top;
+}
+            </code></pre> <!-- Кінець коду приклада -->
+        </details>
+    <p>Ви можете використовувати скорочену властивість <code>background</code>:</p>
+    <!-- Приклад коду -->
+    <details open>
+        <summary><b>Приклад:</b></summary>
+        <b>CSS</b>
+        <pre><code> <!-- Початок коду приклада -->
+body {
+  background: #fff url("../images/img_tree.png") no-repeat right top;
+}
+        </code></pre> <!-- Кінець коду приклада -->
+    </details>
+    <p>При використанні скороченої властивості порядок значень властивостей наступний:</p>
+    <ul>
+        <li><code>background-color</code></li>
+        <li><code>background-image</code></li>
+        <li><code>background-repeat</code></li>
+        <li><code>background-attachment</code></li>
+        <li><code>background-position</code></li>
+      </ul>
+      <p>Немає значення, якщо одне зі значень властивостей відсутнє, доки інші знаходяться в такому порядку. Зауважте, що ми не використовуємо властивість <code>background-attachment</code> у наведених вище прикладах, оскільки вона не має значення.</p>
+    </section>
+
+    <p>Усі властивості фону CSS</p>
+    <table>
+        <tbody><tr>
+          <th style="width:30%">Властивість</th>
+          <th>Опис</th>
+        </tr>
+        <tr>
+          <td>background</td>
+          <td>Встановлює всі властивості фону в одній об’яві</td>
+        </tr>
+        <tr>
+          <td>background-attachment</td>
+          <td>Встановлює, чи є фонове зображення фіксованим, чи прокручується разом з іншою частиною сторінки</td>
+        </tr>
+        <tr>
+          <td>background-clip</td>
+          <td>Визначає область малювання фону</td>
+        </tr>
+        <tr>
+          <td>background-color</td>
+          <td>Встановлює колір фону елемента</td>
+        </tr>
+        <tr>
+          <td>background-image</td>
+          <td>Встановлює фонове зображення для елемента</td>
+        </tr>
+        <tr>
+          <td>background-origin</td>
+          <td>Визначає, де розташовані фонові зображення.</td>
+        </tr>
+        <tr>
+          <td>background-position</td>
+          <td>Встановлює початкову позицію фонового зображення</td>
+        </tr>
+        <tr>
+          <td>background-repeat</td>
+          <td>Встановлює, як буде повторюватись фонове зображення</td>
+        </tr>
+        <tr>
+          <td>background-size</td>
+          <td>Визначає розмір фонового зображення (зображень)</td>
+        </tr>
+      </tbody></table>
+</section>
